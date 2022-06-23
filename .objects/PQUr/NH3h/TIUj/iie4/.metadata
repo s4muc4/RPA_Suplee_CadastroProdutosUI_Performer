@@ -1,0 +1,13 @@
+﻿{
+  "Id": "iie4b7MI-0KnwdwqeaoNPQ",
+  "Reference": "ZP3KN3wgLUe4q5FphCmWWw/iie4b7MI-0KnwdwqeaoNPQ",
+  "ParentRef": "ZP3KN3wgLUe4q5FphCmWWw/TIUjPR7K5UqKoq1S6T0SpA",
+  "Name": "Produto cadastrado?",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2022-06-21T17:13:43.6770791Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-06-21T17:13:43.6770791Z"
+}

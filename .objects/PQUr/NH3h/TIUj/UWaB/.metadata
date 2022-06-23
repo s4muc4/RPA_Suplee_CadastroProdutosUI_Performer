@@ -1,0 +1,13 @@
+﻿{
+  "Id": "UWaBcm_HpUqu0uhk_JjFvg",
+  "Reference": "ZP3KN3wgLUe4q5FphCmWWw/UWaBcm_HpUqu0uhk_JjFvg",
+  "ParentRef": "ZP3KN3wgLUe4q5FphCmWWw/TIUjPR7K5UqKoq1S6T0SpA",
+  "Name": "Efeito: Memória",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2022-06-21T17:13:36.4185275Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-06-21T17:13:36.4185275Z"
+}

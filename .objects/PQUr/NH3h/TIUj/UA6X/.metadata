@@ -1,0 +1,13 @@
+﻿{
+  "Id": "UA6XKnTQXEi9d9oWkC3zaw",
+  "Reference": "ZP3KN3wgLUe4q5FphCmWWw/UA6XKnTQXEi9d9oWkC3zaw",
+  "ParentRef": "ZP3KN3wgLUe4q5FphCmWWw/TIUjPR7K5UqKoq1S6T0SpA",
+  "Name": "Composição do produto",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Created": "2022-06-21T17:13:34.6053915Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-06-21T17:13:34.6053915Z"
+}

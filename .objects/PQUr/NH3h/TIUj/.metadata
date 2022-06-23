@@ -1,0 +1,12 @@
+﻿{
+  "Id": "TIUjPR7K5UqKoq1S6T0SpA",
+  "Reference": "ZP3KN3wgLUe4q5FphCmWWw/TIUjPR7K5UqKoq1S6T0SpA",
+  "ParentRef": "ZP3KN3wgLUe4q5FphCmWWw/NH3hwkwu00WLFrFG4nbi4A",
+  "Name": "Chrome: Cadastro de Produto",
+  "Type": "Screen",
+  "Created": "2022-06-21T17:13:16.1590971Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-06-21T17:13:16.1590971Z"
+}

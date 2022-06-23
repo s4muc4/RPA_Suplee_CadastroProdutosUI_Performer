@@ -1,0 +1,13 @@
+﻿{
+  "Id": "CDHDyXEnj0qa479LyHHIjQ",
+  "Reference": "ZP3KN3wgLUe4q5FphCmWWw/CDHDyXEnj0qa479LyHHIjQ",
+  "ParentRef": "ZP3KN3wgLUe4q5FphCmWWw/TIUjPR7K5UqKoq1S6T0SpA",
+  "Name": "Descrição do produto",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Created": "2022-06-21T17:13:35.1314297Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-06-21T17:13:35.1314297Z"
+}

@@ -1,0 +1,641 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CadastroProduto" this:CadastroProduto.in_strNomeProduto="Nutren Senior" this:CadastroProduto.in_strDescricaoProduto="Nutren Senior foi desenvolvido pensando nas necessidades nutricionais de quem já passou dos 50 e ainda tem muito o que aproveitar." this:CadastroProduto.in_strComposicaoProduto="Composto lácteo com maltodextrina (leite integral, maltodextrina, soro de leite, caseinato de cálcio, frutooligossacarídeos, inulina, mineral (citrato de cálcio) e emulsificante lecitina de soja), café, maltodextrina, minerais (fosfato de cálcio tribásico, óxido de magnésio, pirofosfato férrico, óxido de zinco, sulfato de cobre, sulfato de manganês e selenito de sódio), vitaminas (L-ascorbato de sódio, bitartarato de colina, acetato de DL-alfa-tocoferila, nicotinamida, D-pantotenato de cálcio, cloridrato de piridoxina, cloridrato de cloreto de tiamina, palmitato de retinila, riboflavina, ácido N-pteroil-L-glutâmico, fitomenadiona, D-biotina, colecalciferol e cianocobalamina) e edulcorante sucralose. NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM LEITE E DERIVADOS E DERIVADOS DE SOJA." this:CadastroProduto.in_strQuantidadeDisponivel="10" this:CadastroProduto.in_strPrecoProduto="140.99" this:CadastroProduto.in_strProfundidade="5" this:CadastroProduto.in_strAltura="5" this:CadastroProduto.in_strLargura="5" this:CadastroProduto.in_strCategorias="Proteina" this:CadastroProduto.in_strEfeitos="Vitamina D, Fortificação ossea" this:CadastroProduto.in_strFile="C:\Users\SAMUEL\Documents\UiPath\Suplee_CadastroProdutos\Data\Input\suplemento-sem-fundo.webp" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_strNomeProduto" Type="InArgument(x:String)" />
+    <x:Property Name="in_strDescricaoProduto" Type="InArgument(x:String)" />
+    <x:Property Name="in_strComposicaoProduto" Type="InArgument(x:String)" />
+    <x:Property Name="in_strQuantidadeDisponivel" Type="InArgument(x:String)" />
+    <x:Property Name="in_strPrecoProduto" Type="InArgument(x:String)" />
+    <x:Property Name="in_strProfundidade" Type="InArgument(x:String)" />
+    <x:Property Name="in_strAltura" Type="InArgument(x:String)" />
+    <x:Property Name="in_strLargura" Type="InArgument(x:String)" />
+    <x:Property Name="in_strCategorias" Type="InArgument(x:String)" />
+    <x:Property Name="in_strEfeitos" Type="InArgument(x:String)" />
+    <x:Property Name="in_strFile" Type="InArgument(x:String)" />
+    <x:Property Name="in_dtCompostos" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_strURL" Type="InArgument(x:String)" />
+    <x:Property Name="in_strCabecalhoTabela" Type="InArgument(x:String)" />
+    <x:Property Name="in_strLegendaTabela" Type="InArgument(x:String)" />
+    <x:Property Name="in_strID" Type="InArgument(x:String)" />
+    <x:Property Name="in_strPathImages" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>2434,7965</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>CadastroProduto_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="37">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="CadastroProduto" sap:VirtualizedContainerService.HintSize="798,7900" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="756,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;[SupleeCadastroProduto] Started&quot;]" />
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Suplee - Cadastro dos produtos" sap:VirtualizedContainerService.HintSize="756,7392" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="7be12bf8-9c42-4fda-81ce-53c0dc9c45d5" Version="V1" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="722,7176" sap2010:WorkflowViewState.IdRef="Sequence_49">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strResultado" />
+              <Variable x:TypeArguments="x:Int32" Name="index" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="680,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Recarregando pagina&quot;]" />
+            <uix:NNavigateBrowser Action="Refresh" DisplayName="Navigate Browser - Refresh" sap:VirtualizedContainerService.HintSize="680,81" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_2" Version="V1" />
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="680,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" Shortcuts="[d(hk)][k(pgup)][u(hk)]" Version="V1" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Nome do produto'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="680,216" sap2010:WorkflowViewState.IdRef="NTypeInto_16" Text="[in_strNomeProduto]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="6z-kyB4QtUCB_edWjk4_sw" DesignTimeRectangle="1264, 378, 266, 43" ElementType="InputBox" FriendlyName="'INPUT nome-produto'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='*Nome do produto:*' /&gt;" Guid="e2c83043-0355-482b-8a5f-51c2f5b6943c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQ4AAAAvCAYAAAASNiSCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAG2SURBVHhe7d27TQNBGIVRcqADoBPcASCb9rw9bBu4FedOB1380HoZI/0pe450s5Wz+eRZB747HA7NzKwy4TCz8oTDzMq7GY7tdmhv7x/t6fml3T88mtkClvOec5/z3+vCeb/C8bXbtdfVqq03n20cx7bf7xuwDDnvOfc5/+lAejBvRHYVjjyU4gzDcPoYYKnSgfSgF4+rcKQwogGcpQfpwrQT2SUcudPk6wnAVLowf+dxCUdeiORuAzCVLqQP3XDkLuNFKDCXLqQP3XDkpxiAnvRBOIAS4QDKhAMoEw6gTDiAMuEAyoQDKBMOoEw4gDLhAMqEAygTDqBMOIAy4QDKhAMoEw6gTDiAMuEAyoQDKBMOoEw4gDLhAMqEAygTDqBMOIAy4QDKhAMoEw6g7GY4/Fs90PPnv9W/vX+0cRxPjwIcpQvpQzcc2+3Q1pvP06MAR+lC+tANR/a6WrVhGE6PA0uXHqQL005kV+H42u1+7jLiAaQD6UG6MO1EdhWOLA+lMPl6kruNF6awHDnvOfc5/+lALxrZr3CclztNXoikOPkpxsz+/3Lec+7n7zTmuxkOM7P+Du0bmq5SxtfSAHAAAAAASUVORK5CYII=" InformativeScreenshot="e45a3d025039f25b7738182789420ce3.png" IsResponsive="True" Reference="ZP3KN3wgLUe4q5FphCmWWw/2zrYexCS802eAlidK1nKnQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1070, 385, 173, 30" ElementType="Text" FriendlyName="'Nome do produto'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='font-medium text-base text-dark-normal' aaname='' check:innerText='Nome do produto:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALEAAAAiCAYAAAAQ2zgoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAANdSURBVHhe7ZZNciMhDEazn+R8cfk6qeQi8UWSXCMLn8JbBvcfn4QkwGHiwdbiVbkaGqGP1+1+OJ1OwXFGxiV2hscldobHJXaGxyV2hscldobHJXaGxyV2hscldobHJXaGh0r8fQjPj0/hz8Rb+MCxhY+XdXwX3r/z8Zvi623p9Sk8H47ynJvkM7yuHuwP4SjOaSDm+C/zMySOvHySyWdc4nugn8SrL9eTWBDVJb4HOkn8S/kVJI6wt7FLfA/cmsSR1680pygxbHwlb+AY3vfL+Pkh4XW34GDehPydTkJfaA5N+pQqHUJVrwpYj9XarpF7MIuYA85noqUzWrFeOFLGksSsPq7Be4nX8j3MZPlUZ6g/WLrE+x38TjdZEmsbnyCFeXACWJ9gBMjJRFAQguTwYOt7VbD2vVKZWdpb/jAjuRz2/IltD/0lbsvwEonjZrDIWjxdYxKjCCDP8bDbrqcG2IFs83moKSzcS/pngHWgMayJ/yIytOY2n0lGBGjqVYFLvK1DsylnlihmxM6MSKTUv1TiCcgpy6M5wwslpkHPG5clNhoUx+qCRQHF5iAIKiusLxw2QQnzTPkBrOlVAbPlbx1xTM8su4f3LI7hw8v2WqxvzMfaqsSdMlywJY7X+EGKElsBsjVm2fSNyg9JRAgE11XhgjDyvQHSITT3qmCuI+VjH65dV7jXrC+99Yz62lqaxL0yXChKTJ/Y+J26NTKIxMKBI2ZgLvGtSByBzST+L4lrmpUw13CJb0hi0sAKSmYFLI3p81skVkNqAdbggWKYaf3WXhUwaz4Xx2ok4vdwMcSxn3wT62dDaqvn0ynDhUqJI7jRCdoIHjje2ypCk8TsU2ebr4YnoayBWbB12npVYOvjOikDfBOVDhfHtftoplhHPpvIJrE2H/OLVEl8SYbSv8NMvcQRbCKTLBtnkMK9JKbXc+qeZHuNGX4I9b0qcIklKjNLMKEYvIfS/AncQ0VOxBuhR9xDW4adJKabyiXO58xUfaMtNEs8IRyGtH8Lvu/z/WZN4Z5IzTfcBM9aqk/uqZF4hrzlivPZm3eaqwuTicz3zvctzcfx6gxrJXZ+D+vgnSZc4mvhEnfDJb4WLnE3XOJr4RJ3wyV2hscldobHJXaGxyV2hscldgbnFP4CCotwjlf7YCYAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Descrição do produto'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="680,216" sap2010:WorkflowViewState.IdRef="NTypeInto_17" Text="[in_strDescricaoProduto]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="cJtvdNzHbkCfCwyNGcoLOQ" DesignTimeRectangle="1286, 451, 244, 73" ElementType="InputBox" FriendlyName="'TEXTAREA descricao-prod…'" FullSelectorArgument="&lt;webctrl tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' type='text' class='border rounded-md px-2 py-1' aaname='Descrição do produto:' /&gt;" Guid="2d1d6e9b-1a51-4388-b7a5-d62c0e9d1b3f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPgAAABNCAYAAACL1qnNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIvSURBVHhe7dixzRpBAIRRaqAWWiChEGqiCKogoRcKIF1rENjAf2A58t3oPWmS06bfctzqer0OM+ucwM2KJ3Cz4n0M/HA4jO12O9br9VitVmY2o6XL9JlOp/p97Efg5/N5bDabsdvtxvF4HJfLZQDzki7TZzpNr+n2veXsJfAcys2QWwFYhvSabqcifwk8N4G4YXnSbfp97jn7HXgO5OceWKb0m44nA88f9rzTA8uUftPxZOB5h/dBDZYr/abjycDz6R1YtnQscCglcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCix3+9veyZwKPCIW+BQ5hH26XS6P/lD4LBg3+IOgcNC/S3uEDgs0FTcj2fPPga+Xq/H5XK5HwPm4lvcz4Gn33Q8Gfh2ux3H4/F+FJiDb3G/v6qn33Q8GfjhcBi73e5+FPjf/iXuSL/peDLwbLPZ3A4A85CY3009S7fp97nn7CXw8/l8e4cXOSxHek236fe55+wl8CyHchPk5z7v9D68wfyky/SZTtPrVNzZj8Afy62QP+y5GfLp3czms3SZPtPpVL+PfQzczJY/gZvV7jp+AZK/Md3MMDpOAAAAAElFTkSuQmCC" InformativeScreenshot="f708b78dac8c928fce074b9940ba9a27.png" IsResponsive="True" Reference="ZP3KN3wgLUe4q5FphCmWWw/CDHDyXEnj0qa479LyHHIjQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1052, 472, 213, 30" ElementType="Text" FriendlyName="'Descrição do produto'" FullSelectorArgument="&lt;webctrl idx='2' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='LABEL' class='' aaname='' check:innerText='Descrição do produto:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANkAAAAiCAYAAADS63ysAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAQwSURBVHhe7ZjNceswDITdoWdePxmX4nTi9JGDu/BVT/9agABIWWTiJHv4LhIEgAusrOT0eDw6Qkg7aDJCGkOTEdIYmoyQxtBkhDSGJiOkMTQZIY2hyQhpDE1GSGNoMkIaI032ee3Op1N3Cji/30WCn8TtbTnHubt+2jFFfFxWPS4f07Ux99stjW0J9PGT57KfW3eZz336d+3uZswOeh1b6rfbZCM1DvYN1DHZvbv+Ay0QmuyLqGeyZSdez2QDX71QL8NksmUo9/fzrMnBX8dnoMmOmeyL9PNNZphoW6iBb1gqIqHJfp/JBtBoaWNweDdmYvt0AyLBQJAFnVt8Dn7gr/Klu+n7yQvC+gycnpNxTu/RL3tB71n0V8ZQL7ckR+rqXdC5kvOifr1uGK/mmuoXvbD1XIaZWCZT9TGHsdfmDHsSfYo19I2/22RujF4CROSylhkwjOYJMgK53bhEWDXUqHcRW7l3I97EGLRGD/5w3VCTGZHH12brLX0JI+nyxvEjaw/1TbZPw5omy71FoAD+6i3/hfNquL+QuGBrvBRf/IdvuZ6IgPc942zXxafxkgt6Wc/jPD9i9p77GtDYZ9UmyGu2s6422ZpHmmnLI69j3QWcT4l+Yp5OfXMHC0w2AjoleuzWsLXJzOUbgIMv+bB5LUaCL9x0WHnNHqJ1H4bpCj2dM7uMPXnz6nNG9xTOsAfsgVeqi7ugX1jmPcytXjb6Gb1b5j18uahes/WDeKztzr6ShjNVTIbDdlnFQPEkqTEMQwfYyx7fx94tY4aIF4bMm9OytG4YZy1JpbpxHmvR4uWL6xrPhvWtvQjqe7k8k9XScObY32R7TIYHxxwJaJDXM9mWw4Imk9c24ro0mQALLI3tLbqBwgCrcK9lMozFeLNupUGFcTTZLzQZNCUWymt2FyBcyeDGmtJMz5jM732uverg92LXDXoP7ylQczUTHPbWe6W6uAs6Fu+VLLl+Ru+Wec/aByPerK/m72mYm/1474CGM77JcgihUJB4ge3F6DGFkzm2mnjQLc9TJvOGg3VHMUviZF08K+rlamDiaKtmhXmq1NW7AHk2HfFNnls+OTP7Oakf1tn6lXlwV+x41K8H99Y12TMaQh3c357nTKaSjIhl06DoSqQEKfQAipdgipzmCO9nzr0shBDeQX8+lPYeEmo7oZfkcN2SXRB5ciYbUAuv0GfIxY9gDwU6CZMZZ8Qe9mlY0WTxN6ghCh4KsBc2+Pk1BPQXa6fJRizzp/0kfY/ng3Nb5zV0jXU00DmGOsGb2Hymp7guPjvUsuqLZ0pMNpHOPorXcxli/YVO9kT3rvu24vF+sYalJvvjyDdXvCi/nmgxyS5oMoPVbH95uWiyatBkBovJzE+wvwJNVg2abEZ+KnKxaLJ60GSENIYmI6QxNBkhjaHJCGkMTUZIUx7df6M/BZ/R8WUaAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Composição do produto'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="680,216" sap2010:WorkflowViewState.IdRef="NTypeInto_18" Text="[in_strComposicaoProduto]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="SGd48J8CvUWFKj2JOKEeUA" DesignTimeRectangle="1286, 553, 244, 73" ElementType="InputBox" FriendlyName="'TEXTAREA composicao-pro…'" FullSelectorArgument="&lt;webctrl id='composicao-produto' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl id='composicao-produto' tag='TEXTAREA' type='text' class='border rounded-md px-2 py-1' aaname='Composição do produto:' /&gt;" Guid="11583159-c4f6-4e18-8a1b-e5b497233eb0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPgAAABNCAYAAACL1qnNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIuSURBVHhe7dixzRpBAIRRaqAWWiChEGqiCKogoRcKIF1rENjAf2A58t3oPWmS06bfctzqer0OM+ucwM2KJ3Cz4n0M/HA4jO12O9br9VitVmY2o6XL9JlOp/p97Efg5/N5bDabsdvtxvF4HJfLZQDzki7TZzpNr+n2veXsJfAcys2QWwFYhvSabqcifwk8N4G4YXnSbfp97jn7HXgO5OceWKb0m44nA88f9rzTA8uUftPxZOB5h/dBDZYr/abjycDz6R1YtnQscCglcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCgmcCix3+9veyZwKPCIW+BQ5hH26XS6P/lD4LBg3+IOgcNC/S3uEDgs0FTcj2fPPga+Xq/H5XK5HwPm4lvcz4Gn33Q8Gfh2ux3H4/F+FJiDb3G/v6qn33Q8GfjhcBi73e5+FPjf/iXuSL/peDLwbLPZ3A4A85CY3009S7fp97nn7CXw8/l8e4cXOSxHek236fe55+wl8CyHchPk5z7v9D68wfyky/SZTtPrVNzZj8Afy62QP+y5GfLp3czms3SZPtPpVL+PfQzczJa+6/gF589FhMkwONMAAAAASUVORK5CYII=" InformativeScreenshot="dc9230a8764302abd3f4a752ed333571.png" IsResponsive="True" Reference="ZP3KN3wgLUe4q5FphCmWWw/UA6XKnTQXEi9d9oWkC3zaw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1028, 575, 238, 30" ElementType="Text" FriendlyName="'Composição do produto'" FullSelectorArgument="&lt;webctrl idx='3' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='LABEL' class='' aaname='' check:innerText='Composição do produto:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPIAAAAiCAYAAABlVoSLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASOSURBVHhe7ZhNcuowEIS5IVW5T4qjkJuQe2TBLdj6yTK2e0Y9sgSCPCuz+Da2mJ+eaUFyuN1ug+M4+8aN7Dgd4EZ2nA5wIztOB7iRHacD3MiO0wFuZMfpADey43SAG9lxOsCN7DgdYBv5+zQcDgfFcTj/kLNO5PLZSCfQ/vQ9PYuxPy/p2VcCdRy/rvxMl1yG073vw8d5uNIzFQQdX60fMTI0YfHuhdoJbYx8Hc4foDXiRn4T7Yw878SbjZxZIsXfGuw7mWYw63v9Ot41/4VfQ27k54z8Rv2EkdelGdGLo01+Gi7wWadD3Mh7NDIa1br972fMn3jsG50YfmlwyrP+JJ2Y/y5EIUYSMZRQ8iLKi6dz5r7x0rMBMuD8T+tCbQI0X+5ntdJppHpxfs7DEWOM+bYW8Zm8mE/lWp6Jz6B+QTc8r2ZRM9t0LuNMmJFVfoyhewnP6AwDiT7FGuYvl9XIpJgq9CIoFnOOkOI1xw9pyuU5NlkQJ+0FBCFIEZn5AHOB1OJktcGzdflGrIWJkPOUknmo5Xo678a+REQcW5u1tprZbp+PLDW0N3Kdhg8YOW14C2wSFxOFgubF4qznzW9UFAqbUAtoDRQvERRvfW7UTwY0gnXywVjmNHqde4J+NmtT50vq4xhaKaOJOC3yqvhrHOwX48jnmHemarbqvJX/USNHQKdEj2oNS42cS7pFYcHLO6MJ07AlF4IeLHtnCW69wxh6eARqZNZ/ZOqpROvtC0LXlnunyGjIl6pRXnPW1juMrS40/ZmS2Vo7pc+/xMiNNASaGJkv2gy5Saxc5jCM5rI1p3lxMfFbeoLlwGFL0s9zHfI5N0CTqbjZxQ2U5s2eY/o2ypuPw2aRX/Dq2Wbzk53N5bdiVe/5xCM7w/9GXoovo18jB7CmBNlvCyOvMRhuZPlspXq22fx7NrIolBkSziijd21k+h4ALZ41Mp7F81TfRsuQPedG3qORZQBmSvltAe9zhmLvqhs0RIQ4+nIR7+ZYOQE3xJXAoKEeajhTm3tPSy57UfhFmVms7DsF0+kO7sNae6O8qLc+i+9KjKQ/UzRbPsPkPM2vvGFpuDX7+O4JDQFhZBkkjywMRcEmDbGsBs1hGM2hgAG+bNby423Hz/NFDtBBlxgOnovax55KzmFcdfGCXmbdFGN22KOK0ySvio9x8AuDz4gteN1sRzAP350AnS+eR/0CRUZ+REPIo7+0AsrII6owBgmUDEYhfiK8yMgUEWck358UTw01wVoM+bxUGzFcA6FjAJcrgc2JUaCjXsSn825oEhFxjB0Q1Mx2+3wEa6jdN9Ij1lCnYbWR79Ci1YISkuLYUF9g5BhH1ZwObiU1jbUclsHS86aRI+xSSGMkuaIOMMTkYgqQhdGG30THGPNYc7I+EyjOq2fN8ovPlBh5oma26VzGsxnTaF/o2nXd7Dy+L9bwUSPvga1F+8+Ql1x+Gbsnt/xONW7kX2Ax9F9eYDdyU9zIv8Bs5D3V3Bw3clPcyG8i+d/BX19eN3JT9m1kx3EibmTH6QA3suN0gBvZcTrAjew4u+c2/AOeZ3fkf/JWrAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Quantidade disponivel'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="680,216" sap2010:WorkflowViewState.IdRef="NTypeInto_19" Text="[in_strQuantidadeDisponivel]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="sQ4vqJuq7UqsXoUoLOVY4A" DesignTimeRectangle="1103, 701, 100, 43" ElementType="InputBox" FriendlyName="'0'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='number' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='number' class='border rounded-md px-2 py-1 max-w-[80px]' aaname='Quantidade disponivel:' /&gt;" Guid="03e42167-31ea-4da6-9196-7f95dd1b1034" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAvCAYAAAAPQY91AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJGSURBVHhe7ZuhTgNBFEXnG6pq+QNIKkBCUrOyCaauqUQi60glQSEaUltXKkiQq0i6jh8goQLRpAbRpPYxtx2gdHeBLa/sE/ckz7zdrbgnszOd7LjFYiEsu0VBxouCjFeuoF6vJ/V6XSqVijjnWDsoZIuMkXWWA1RKUJIkUqvVJIoiGQ6HMpvNhOwGZIuMkTUyR/abPr4Iwg2wCqPkf0HmyH5T0hdBsEg55YHs4WDdyYcgXMRQI+UCB3CREoTJCu9DUi5wABcpQXj/cUFQPnAAFylBWPYRG8AFBRmGgoxDQcahIONQkHF0BU1juWwdyZ5/3rk9OWpdSjwN18hW6AmaDKRZdVI9bsv1KJZ4dC3tQy+q2pTBJNxDCqMkaCqDUy9jvyPjeWiB+Vg6+77fupXX0CLF0BH01JfIP3Ny8xwanzzfnPjfi6T/FBqkECqCXu/Ols90HkJjnaS7vHZ2xzG0DSqCVqOkkT3X+Lmp4X/v4OoxNEgRVASNL7Bq84JeQmOdl5UgdzEODVIECjIOBRlHRdBv5qCsFR75GRVB76u4bhIa63AV9ydUBPF/0O7QEZS7kxDLedX3uZOwNUqCPGEvzh1yL04TPUFgci9d7maroiuIqENBxqEg41CQcSjIOBRkHAoyTqYgfjxvg9yP53n8xAa5x094gMsGuQe4UDwCWS7IPvcIJIqHiMsDmSP7bw8Ro3ADLGKo4X3IhcPuQLbIGFkj8005qJSg94JRTFawimUfS7+QLTJG1lkOULmCWDaKgkzXQt4AHUUVs0HCU+cAAAAASUVORK5CYII=" InformativeScreenshot="9d7efe08810d690c98291235a6eb65d4.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/bqy0RwBqSECNy68V1EnopQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1043, 656, 221, 30" ElementType="Text" FriendlyName="'Quantidade disponivel'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='LABEL' class='' aaname='' check:innerText='Quantidade disponivel:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOEAAAAiCAYAAACpz75gAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAR1SURBVHhe7ZfBdeMwDETdod7bfvJcit2J00cO7sJXrWnJIkAOIEJWQudlDv+wNEUOgBmtcrjdbiMhpB8MISGdYQgJ6QxDSEhnGEJCOsMQEtIZhpCQzjCEhHSGISSkMwwhIZ0xQ3g9D+PhcCgYxtMX3v+upDqOn2Lt6zQOz3o+Lmov5jqe/j3rP44XuGc7ss9K5zeC77yMx3nt8O80XotnfiuXj7mmH/Huth7WIfw8zqIdfsWQcngYQg1D+F3sEUJp0DXefFD7mfuvhJC8zsshlGZL1G8OObzEOw+QIbRhCL+LV0Oo/hd0zCY/V+VFYn04X9Uz9idBGfyJ8vm6OPHvB1IvPjPxMNzK52jWmkh6vRC26p8pPvXTPjcQ1Z8GGz6pmu+0DST3Z2qP6DmXvfG0oz4iD0Z8MFF5z/GpG6KmWVjPO+feWUIoG22a6IFhSqc4HMKygQUqICt7E0txOBgJP4T2cxk55Ih+y8gaGUJvfxVWg9id2Cj6pVSiTe/vnai0r/wJpPdHfDBRew/X+cDwcPssrLOdO+8sIcRBwcC9wRDmwqxgOoZfDC7XtW7ZONUoI4Sq0aYJs6aQfmU03LPEolPsz700Xn4W0TuhUdBacYbooe6VdafULmtq6KNav9PgA+Q96F+1jme3PgujX+b6RLcQYhqKU+t22GIhtMyQsO+uwfqlFrs3WSc0Q0JoVzUBondCo1hBNsDnOr85nsG/xX2Q7xX6YbDE2fDF0jIL0MMGQAjrBpbAwl4MoWzihCzaLs5qvrWOQ+g1z3oxaDz9Xv21TnmfTWXagtidCdQDWwu6350z8IfvC6Qn7gN8h6jreY7Ql5+PzsLzkU3D34STEHiRNGU4hGsFvnsI2/XHAtE2ePm2RsTuTFg9kPOukb11Q/VWIZT7p/W8LzLjmSYf2Swh1J8eQohaH8ZBipJGCIYwr8l1y/Dx5lvre4Uwot8yQqLWafUgRuzOxLqBdM1P2up8txBKHwznUz5Xvdyis1jvISKHUF2YEKJVEDPK3KLJdiHPMy2xVtHx5sdCiDQ+EXcvmmL6pRb7BZV1+uZsI3pnzEC4X/LcpjudFzf+Le4Dr5dSE3pW72mZRaSHGRHCO0bYICpo5bPYgLkQZOxy70+GsLhbrOtBgRC26Dd6o15cd5A5Zb0hQ0TvRD2We9W8cf26V0Kj1KLmJ8+RNeHzocYZa95uz4pelGdWe1ZnYemzdSd0CBOlMA81GPl2tMiC9cAQLcU5YQN1PH43Qtim3zIcQg9dBxSDzQNQum1id+Ier9XZrHlGzSihXhY1ev/OIZTn3an+N55pn4Wlz9adqEM4gwd4L+Ssza2Fl0aeCrcaURb3OEsM5ZXPkPK3RHk+MrPWlPTiT8x6r6d/pngxpN89/eaLRO5Zo/lOxyjwxVybupxz3Uu9X1L2Epl1iw9KTc/11t8XmmaxcwjXmMRrU5K/TbOhiWJzCAkpYQi3wRCS3WAIt8EQkt1gCLfBEBLSGYaQkM4whIR0hiEkpDMMISFduY3/AWIAzvgozW/4AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Preço do produto'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="680,216" sap2010:WorkflowViewState.IdRef="NTypeInto_20" Text="[in_strPrecoProduto]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="cp8Rcu7pOkO8ekZ_RO9kSw" DesignTimeRectangle="1354, 701, 100, 43" ElementType="InputBox" FriendlyName="'0'" FullSelectorArgument="&lt;webctrl id='preco-produto' tag='INPUT' type='number' /&gt;" FuzzySelectorArgument="&lt;webctrl id='preco-produto' tag='INPUT' type='number' class='border rounded-md px-2 py-1 max-w-[80px]' aaname='Preço do produto:' /&gt;" Guid="1f978985-e472-42e4-85d2-114aa4a45527" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAvCAYAAAAPQY91AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJCSURBVHhe7Zstb8JQFIb7G1C18whIMPwATN2a8CuQKASGTPIDyMQESVFYJJPFMYfEIJZgcK08u+8oy+jHAvR2PeJ9kmNuP8T75LaHS68TRZGw9BYFKS8KUl6FgmazmfR6PWk0GuI4DquCQrbIGFnnOUBlBG02G+l0OuJ5niyXSzkej0KqAdkiY2SNzJF92seVIJwAqzBK/hdkjuzTkq4EwSLl1Aeyh4PfTn4E4SCmGqkXOICLjCC8rPA8JPUCB3CREYTnHxuC+oEDuMgIQttHdAAXFKQYClIOBSmHgpRDQcqxKOgku8VQvKb7fb3b9GS42JlRUgZLgmIJJ11z3ZP4k0BW7ysJRp645j7dSWiOkkexIijevEjbXOPP98nImf3cN/dqy/QjGSB3Y0FQLOsRHmtDWaenSryWobmXO1pzFj2IBUFbmbYccZ4DuZ4/4FOCvjnWmpqzyCOUF5TMEmccJgPXhGP8YziQFbuFhygv6BCID0GmGcgjnECQL8EhGSB3QUHKoSDllBd00zsop8MjN1Fe0KWL6wemZ0vDLq4sFgTxd1CVWBBkPBStJLx65l5cSSiDFUGYRee1OFe8EdfibGJJEDjJ9m3A1WzLWBREqoCClENByqEg5VCQcihIORSknFxB/HheB4Ufz3P7iQ4Kt59wA5cOCjdwobgFsl6QfeEWSBQ3EdcHMkf2f24iRuEEWMRUw/OQjUN1IFtkjKyReVoOKiPoUjCKlxWsou1j2S9ki4yRdZ4DVKEglo6iINUVyRc8PxVKn9psPgAAAABJRU5ErkJggg==" InformativeScreenshot="1cc8664b7386963782f4ebcc6c79b8e8.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/2z9pc3zVMk6tEe4UT0JIWw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1317, 656, 173, 30" ElementType="Text" FriendlyName="'Preço do produto'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label' idx='2' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='LABEL' aaname='' check:innerText='Preço do produto:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALEAAAAiCAYAAAAQ2zgoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAANCSURBVHhe7ZfLccMwDETdoWfST8alOJ04feTgLnRV9KO4AAGItOiMqODwLiKNz2JJyZeu63rHaRk3sdM8bmKnedzETvO4iZ3mcRM7zeMmdprHTew0j5vYaR43sdM81MQ/9/56ufQXi88HCXBmnl/Xte/bt7znlHzf1r6vX095TwlDvCpxFMpNPPJx75/4u5PiJt5v4sdnnTgWr5l44J1FHQU38c45177RFXQTC58NONT/cBu7iU9o4q579LewHkzMfhNeH7xwcgAmbv1jjcuBPAHj0GDOmWt//5H3qoDgI2PtWybelZcNmOuTDD1T56579vePuDZjaM3fvuPcRfNhXBZP8E2qzQzvK1tDw5uv38RhnYuwEovRGhILZmai8GEIZgcSIyikByyFmrhCXrPPBZxBhs76npnkIGbU8D4TF2poeHP/NzH7jSVUXBNudP4chCKCQAP4PMZGsTNuRlI/7GcDxr6q5GXxteGu8bd0VvPLmubmedXEE9AjN2WxhlqOgddMjMbD3ySvfCiKr60NxmLV1/eSQ3o27WdNmWsMzJkldKW8xMR8r7SGsaVPK8Mw4pqRX9akoolrabhQbOJEIDMpPe0awSDRNNs3mWr4CUNwhpVTylErr2k61C0YdmO4tnZpPLMPsbZ6Jq6m4ULhHzuBCiYODbqJA27ief1oJpZegQw3ccBNPK8fwsRlBenNzUMgw7byFvSBObmZojGgnkp5ccDJAce1EGcrtnUopDUpx4KsCc6SHRQtllZTLQ0X3mxiKkhc18wNNwY8JzHWgWMMNL0htgTWj7XgYAbk+DvysvibZtmcDWqH+WVN1f1ED2o+PNTxOcYZwNo0E7+iodH/203MC+bQ5gbYcCncHExARhJbgRwShSj0SIW8Zp8LqGfObJgBObSHgYwaSC97al6I8Qo1NPr/AxPPpEbhhkSEBo1v6jT29qdLAhvQKCLGTQwwsCsv5JsGJuQn+wtmgzfmhKFdYrQxNq8N93Mjj/ut2qT9sJ6toZGDmvgwsNvbGkKrWEZxijioiQPRzKcbtJu4Gs2YWHqdN42buBoHNHH6R/CUQ3YTV+PgN7HjbOMmdprHTew0j5vYaR43sdM4Xf8LAQ4f+zZmg6EAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Profundidade'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="680,216" sap2010:WorkflowViewState.IdRef="NTypeInto_21" Text="[in_strProfundidade]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="7yKSd--_b0G--eO8jtKDwQ" DesignTimeRectangle="1061, 813, 100, 43" ElementType="InputBox" FriendlyName="'0'" FullSelectorArgument="&lt;webctrl id='profundidade-produto' tag='INPUT' type='number' /&gt;" FuzzySelectorArgument="&lt;webctrl id='profundidade-produto' tag='INPUT' type='number' class='border rounded-md px-2 py-1 max-w-[80px]' aaname='Profundidade:' /&gt;" Guid="09f1000b-90c9-45e3-8541-91fcb6db6a60" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAvCAYAAAAPQY91AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJISURBVHhe7ZsxSwJhGMfvMzi5Bn2AAodcBYfcElqChnCK5qZwEadwigYHaQh00tFRl0C3vkDgKtjgpoPD0/uvU9S7K5Xnumf4/+CBeO/O4f/jvXt64fFms5mw7BYFGS8KMl6Rgur1uuTzeUmlUuJ5HiuGQrbIGFmHOUAFBA2HQ8lkMlIoFKTdbstkMhESD8gWGSNrZI7st31sCMINsAqj5H9B5sh+W9KGIFiknORA9nCw7mQlCBex1UiywAFcBAThY4X3IUkWOICLgCC8/9gQJA8cwEVAENo+YgO4oCDDUJBxKMg4FGQcCjIOBRlHV9BiLL3HkmSPf05oj85KUuuP/YvkEBQFjaR5nRYvnZPSU0d6/Y4832Tdb6XlqjXy7yH7oiZo3Cq6507l4W3ur4C5DMqnbr0knU9/ieyFkqCRNM7day3fcH9t8dGQnPu9wgt30SHoCJp25c4945UH/sI6A6ni2m1Xpv4K2R0dQf4uKb6G7RL3bbpwgk5q8u6vkN3RETSsfj9TbIV1bGNpXqKrq7q9RPaFgoxDQcbREbTLNyiswyN/oiNo2cVV2MVpoyOI/wfFhpKg6JOE3n3arfMk4VDUBK3O4rwsz+IUURTkWIykW+Fptia6gog6FGQcCjIOBRmHgoxDQcahIOOECuJ0gw0ipxs4H2SDyPkgTtjZIHLCDsUZ1WRB9pEzqihOeScHMkf2v055o3ADLGKr4X3IxiE+kC0yRtbIfFsOKiBoWTCKjxWsou1j6ReyRcbIOswBKlIQy0LN5AseQRqSHEzJAwAAAABJRU5ErkJggg==" InformativeScreenshot="eb21eb2fcad3ec1e7f3dca721360bf31.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/L56H5C8xMEWWLykkJ8DqSA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1044, 773, 136, 30" ElementType="Text" FriendlyName="'Profundidade'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='LABEL' class='' aaname='' check:innerText='Profundidade:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIwAAAAiCAYAAACN1jGgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALOSURBVHhe7ZZNcsIwDEa5ITO9T4ej0JvAPbrgFmzThODkkyIpllvTTudbvI0j/0h6Nhzu9/tASC0UhqSgMCQFhSEpKAxJQWFICgpDUlAYkoLCkBQUhqQQwlzeD8PhEHEczp9ygS58noej2vt0NeJexm04v5WznIZLGcdzvl/UHIvLcCrxb+fhZsa0c/s4Ps/Yr15JYWb6Ng+KuvAiUV0oTKFJGFG0nybdhFfgCJPm3wpj3Wh587u9MtfTssfx42bHvBwKU0gIYx9IzLnifw9VWBChoIXwXrg5Lmia8yrpfPT6XlFl3DS35ScJ55R5gTC41oLdhweqnlONQmE29a/vMdL4wqzfvSbbjTOAwnlx3xfGQ+epm2xRI4x8jU1QGOMyIbpx2FQPnBPFR2snhNljLZqYYz2zWAwoKh5MvDQQL1+g7wpjnxn3EIV1Rd4XRsQv40rGZX0Y9yRCGcVLBMIr6ZZmQ/yaq1/LLsLgQjhnu0HQZO9bJ2HE2cx4XF+/PPhi7AnjxOp463IhTk7uRRux8l3H/LNYYngkhVGbijnGz5iTdMG0uYsw6mxmfPD/wtvbWifMOdqjgHs9qclpZFtPYy0DLV5E6k+vBYV5jpd1WoTBORY1OY20CrM9pw+FWeJ/SxgYw/FsTiOxMKpmjfQVJjyw861KGLUXzGkXJlhfNHVHGC9WxxcxvHwdYVAK/VOy5rtewJaeRnQWRiZYlbgrjCzI+k3d0GZh/LPivvvCeOdEIUcMYdY1VCysLfZ0LtqE9WLjy+nVZvtKSboLI2MMIIkHgTC6KCZm4+qE2TTKZF+YjcQWS96Z2BkhtgM2O6y/OPcfEeaBuBkz1oFCYdT3B1PCuze9VpgZWeBpLopUI8yElm+aB3IICbQ083nX5hm1VXWYahU227hsVv1TwhCyB4UhKSgMSUFhSAoKQ1JQGJKCwpAUFIakoDAkwX34ArWYXFs4Fm7TAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Altura'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="680,216" sap2010:WorkflowViewState.IdRef="NTypeInto_22" Text="[in_strAltura]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="gjZRU8034EiLohOxdqJ5ew" DesignTimeRectangle="1228, 813, 100, 43" ElementType="InputBox" FriendlyName="'0'" FullSelectorArgument="&lt;webctrl id='altura-produto' tag='INPUT' type='number' /&gt;" FuzzySelectorArgument="&lt;webctrl id='altura-produto' tag='INPUT' type='number' class='border rounded-md px-2 py-1 max-w-[80px]' aaname='Altura:' /&gt;" Guid="d8f284b7-fe2b-4499-bc27-b0c47ed904fe" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAvCAYAAAAPQY91AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJISURBVHhe7ZsxSwJhGMfvMzi5Bn2AAodcBYfcElqChnCK5qZwEadwigYHaQh00tFRl0C3vkDgKtjgpoPD0/uvU9S7K5Xnumf4/+CBeO/O4f/jvXt64fFms5mw7BYFGS8KMl6Rgur1uuTzeUmlUuJ5HiuGQrbIGFmHOUAFBA2HQ8lkMlIoFKTdbstkMhESD8gWGSNrZI7st31sCMINsAqj5H9B5sh+W9KGIFiknORA9nCw7mQlCBex1UiywAFcBAThY4X3IUkWOICLgCC8/9gQJA8cwEVAENo+YgO4oCDDUJBxKMg4FGQcCjIOBRlHV9BiLL3HkmSPf05oj85KUuuP/YvkEBQFjaR5nRYvnZPSU0d6/Y4832Tdb6XlqjXy7yH7oiZo3Cq6507l4W3ur4C5DMqnbr0knU9/ieyFkqCRNM7day3fcH9t8dGQnPu9wgt30SHoCJp25c4945UH/sI6A6ni2m1Xpv4K2R0dQf4uKb6G7RL3bbpwgk5q8u6vkN3RETSsfj9TbIV1bGNpXqKrq7q9RPaFgoxDQcbREbTLNyiswyN/oiNo2cVV2MVpoyOI/wfFhpKg6JOE3n3arfMk4VDUBK3O4rwsz+IUURTkWIykW+Fptia6gog6FGQcCjIOBRmHgoxDQcahIOOECuJ0gw0ipxs4H2SDyPkgTtjZIHLCDsUZ1WRB9pEzqihOeScHMkf2v055o3ADLGKr4X3IxiE+kC0yRtbIfFsOKiBoWTCKjxWsou1j6ReyRcbIOswBKlIQy0LN5AseQRqSHEzJAwAAAABJRU5ErkJggg==" InformativeScreenshot="370b7d9ba286ef007e684d17e8dc0afa.png" IsResponsive="True" Reference="ZP3KN3wgLUe4q5FphCmWWw/u42JdMW0hEepJ84DqkF-5w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1246, 773, 64, 30" ElementType="Text" FriendlyName="'Altura'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label' idx='2' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='LABEL' aaname='' check:innerText='Altura:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEQAAAAiCAYAAADmvn/1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGgSURBVGhD7ZXBkYMwDEXp0DPpJ+NSoBPSRw50wVUbYsDSRzIOzLCbHR3eIUGypWdkmnEcycm4EMCFAC4EcCGACwFcCOBCABcCuBCgKKS/N9Q0C4Hapx43kWO1uJ7iraVB/Pc3KQh5NbHKSIRuUOISppBHTP9/vZClEU6hKV0Ik/rtQnKDkWJxHDD+Xwphjdx7Gp8tBf5bydkI0d6wiVmMOWKWRLZe6Hpqb0t+Q/Exx/A6V7RDtA9KFyI2n+6NgRUQqVdyrhQimesxnydWaaU9XqhCtGKHLhiL2zmljc8JwRx2YFaOeLM/EmIE74zNpUKMsd1QMerIVgjbWH5my2NzpZDS5z/Ba505JkRZyACL+nUh6oXKOCRkb1FOVYNXCWE5PO/syPCLcx/ZyHEhcEnzJmqFWM/OCeHjgqeW4dL45p8KEfLXYmFkDwgx1xJC7LqyEOtkECNOF6LcSUsOX8eiVgiOjIboqUKIdfJbZJPL6151J7xhXyiU8i7OKLYoZAL3SXXkvureXHmpOi4EcSGACwFcCOBCABcCuBDAhQhG+gEsogDIQ6OFsAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Largura'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="680,216" sap2010:WorkflowViewState.IdRef="NTypeInto_23" Text="[in_strLargura]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="eWdtj_XKUUmnB0UOfDO3XQ" DesignTimeRectangle="1396, 813, 100, 43" ElementType="InputBox" FriendlyName="'0'" FullSelectorArgument="&lt;webctrl id='Largura-produto' tag='INPUT' type='number' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Largura-produto' tag='INPUT' type='number' class='border rounded-md px-2 py-1 max-w-[80px]' aaname='Largura:' /&gt;" Guid="30bdb950-4d85-4835-a491-271ca9889454" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAvCAYAAAAPQY91AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJKSURBVHhe7ZuxagJBFEX3G6xsA/mACBaxFSxiFyFNIEWwCqlTBRuxClYhhYWkCGilpaU2AbfLDwS2FUxhp4XFy9xkFXV3g7qz2VfcAw9kdrS4h5kdB54zn8+FpbcoSHlRkPKKFNRqtaRUKkkmkxHHcVgJFLJFxsg6zAEqIMh1Xcnn81Iul6XX68l0OhWSDMgWGSNrZI7sd31sCcIEWIVR8r8gc2S/K2lLECxSTnogezjYdLIWhIdYaiRd4AAuAoLwssJ+SNIFDuAiIAj7Hw8E6QMHcBEQhGMf0QFcUJBiKEg5FKQcClIOBSmHgpRjT9ByIsOnqhROf29nT86r0hxN/IfkWCwJ8qRzkxUnW5Tqc1+Go7683BbM72Tluuv5c8gxWBE06VbMd3Ly+L7wR8BCxrWcGa9K/8sfIgdjQZAn7QuzrZXa5tMOn20pmt8qv3IVHUt8QbOB3Jv5Tm3sD2wylgae3Q1k5o+Qw4gvyF8llbewVWLeTZdG0FlTPvwRchjxBbmNn/mVbtiJbSKdK5zqGmYtkWOgIOVQkHLiC9rnHRR2wiN7EV/Q6hRX5ykuCeIL4v+gRLEgKPomYfiQNeO8SYiDFUHruzinwLs4y1gSZFh6MqjzNts29gSRRKAg5VCQcihIORSkHApSDgUpJ1QQuxt0ENndwP4gHUT2B7HDTgeRHXYo9qimC7KP7FFFscs7PZA5sv+zyxuFCbCIpYb9kAeH5EC2yBhZI/NdOaiAoFXBKF5WsIpjH8t+IVtkjKzDHKAiBbE01Fy+AdAQGpKaq/BNAAAAAElFTkSuQmCC" InformativeScreenshot="65c4b391e797ab47dd14cacfcc230b79.png" IsResponsive="True" Reference="ZP3KN3wgLUe4q5FphCmWWw/dNj_A6-qVE2VZPksEozOWA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1405, 773, 81, 30" ElementType="Text" FriendlyName="'Largura'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label' idx='3' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='LABEL' aaname='' check:innerText='Largura:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFUAAAAiCAYAAAAu0pUjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHFSURBVGhD7ZdLsoMgEEXdoVXuJ+VSzE7MPjJwF0554Cf25TWCQldhVQ/OJDbQ9wQwaeZ5NkpZVKoAKlUAlSqAShVApQqgUgVQqQKoVAFUqgAgdXq3pmmahf6DhUo6KlUAlSqAShWggNTJDN06htK+J6z79OTZCGNgLVK3P2P7gvlwrfG1j2/N8N0+/w6m3eqb10hq6PjELJYzV5lSR9Nv9Sy2+V+tJ+ugN+NWQ9entF1hqcBecyGLRUzqUU+ah+YOYSiV1m9A6LDoUlL9fJeyQH1hqTz0CAWket+6g66NkvBIFpHaDWYi9WECWSIUlUrH/2vkRIKDFbHB9pUjlflSfU6zRMiUyl/sB0+SeiFLhCypR/OOPUD8+Nco9VKWCBlSySUOd9Q9qXRtfI47iJOKkmh9qtSLWSIEpZ6yNMW/GXGOdKkQOjgfkZpUf0NqShbvmb8BM6T6R4aDhIpJtYTWZ3+nejuY5+7x5yBzWcSkOvxmFmEkwE9gglQH9rAGCQfwxa71d+5UR3IWS7LUWjkC4G6plXqk0hcP3F/hfzW1UtFOpfJ4zq6Nmqju+PMvjGcc+51H3KlPQ6UKoFIFUKkCqNTizOYP2xPrh6UyBzQAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Categoria'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="680,216" sap2010:WorkflowViewState.IdRef="NTypeInto_24" InteractionMode="HardwareEvents" Text="[in_strCategorias]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="0-P8MSp9c0uhrQQz-uonXQ" DesignTimeRectangle="1283, 886, 121, 53" ElementType="DropDown" FriendlyName="'MineraisProteinasVitami…'" FullSelectorArgument="&lt;webctrl tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SELECT' type='' class='py-2 px-3 rounded-md border appearance-none' aaname='' /&gt;" Guid="af79fb6b-da6e-47ed-93d4-ea92d25c9c67" InformativeScreenshot="b0fa2046efea5469ca304960661a688e.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/ZXv_pFxBv0mYachoabHy2g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <Sequence DisplayName="Sequence Image" sap:VirtualizedContainerService.HintSize="680,1304" sap2010:WorkflowViewState.IdRef="Sequence_32">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="strImagePath" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="562,562" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Directory.GetFiles(in_strPathImages)]">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,437" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If Condition="[path.GetFileName(item.ToString).ToString.StartsWith(in_strID)]" DisplayName="If for o mesmo ID" sap:VirtualizedContainerService.HintSize="484,343" sap2010:WorkflowViewState.IdRef="If_9">
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="304,155" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[strImagePath]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[item.ToString]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_30">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEach.Body>
+              </ui:ForEach>
+              <uix:NClick ClickType="Single" DisplayName="Click 'Imagens'" sap:VirtualizedContainerService.HintSize="562,156" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="YpBTtD8Kc0CxM_cLwDy3Rg" DesignTimeRectangle="802, 808, 358, 30" ElementType="InputBox" FriendlyName="'INPUT imagens-produto'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='file' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='file' class='' aaname='Imagens:' /&gt;" Guid="94f490f6-98bb-4b63-ac58-a873d2fccfaa" ImageBase64="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" InformativeScreenshot="bf109c7640e9576b109d8acf1f26a28b.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/DBds9DjWIUeLBgg07MMDhg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="946, 776, 70, 24" ElementType="Text" FriendlyName="'Imagens'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label' idx='4' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='LABEL' aaname='' check:innerText='Imagens:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAcCAYAAADGBymbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGtSURBVGhD7ZVBjoMwDEVzQ6Tep+Io9Cb0Hl1wi2wzhMGJ4zjhVyNKR/LiScWYYL841Hnvg3GMiQIxUSAmCsREgZgoEBMFwkQtYbq54JwL47NMMkwUjIkC6YpaHsN27e5z/r1fF/dZTFuvmfOawpDuD2F6zWHcr4vNKvJWxDrzPceLmtwYZpbnfV6fkEORnr9NYWFxTJTCcKvvDY+lWqudUxfNSQ08R/U+bySJ0kh57fdxWX8UFXe7zFFjtNM0AVoze05eO+8635jfGuqatFgWRTUptaepzO+TNfXARLGGuzHthXIi9hwqMk9YRBw9eeQE9KzacHqW5MmJkseyD/yNojws1jlWW05+VylK1HAgit6HiVppHOOyBp1TRKVrVmTZTEtUa6JYswqwKE6xCcfTdYqounA2YXssy8S+UdpaVCckKk0TkwJuROTkiVJQGk6s/6S0y1TDW/96PVFcuuTgGxw56RvFiqd4KlzbUYrX07IhZYkm8KOnyOLPrACiPksqiDfyxlH4NJeJKqdJIHbzG7hOVEST9YWSIteK+keYKBATBWKiQEwUiImC8OEH79CrWtJC4PAAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Nome'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="562,216" sap2010:WorkflowViewState.IdRef="NTypeInto_25" Text="[strImagePath]" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable ContentHash="Pvh5y2B3fEuOijCo8KZiIQ" DesignTimeRectangle="183, 470, 532, 15" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" Guid="35f4e20f-2575-4c5b-a1ee-b45ff4171648" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhgAAAATCAYAAADS3HT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABqSURBVHhe7dYxAQAwDAShynr/xlITNzLggbftAABKggEA5AQDAMgJBgCQEwwAICcYAEBOMACAnGAAADnBAAByggEA5AQDAMgJBgCQEwwAICcYAEBOMACAnGAAADnBAAByggEA5AQDAIjtPtArv0jPTKx1AAAAAElFTkSuQmCC" InformativeScreenshot="ea6b3bfa1416fd77a4b62938fd76333d.png" IsResponsive="True" Reference="ZP3KN3wgLUe4q5FphCmWWw/ChopnwhZmUWpbn7VfzxF3A" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Abrir' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="138, 469, 36, 15" ElementType="Text" FriendlyName="'&amp;Nome'" FullSelectorArgument="&lt;wnd ctrlid='1090' title='&amp;amp;Nome:' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1090' title='&amp;amp;Nome:' check:text='&amp;amp;Nome:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAATCAYAAADiQ08DAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADmSURBVEhL7ZPtDQMhCIY7ltM4i7M4ips4CeVDT/Cquca08Yckb3IgB4+iL+cc7KwDuKoDuCoFGCABWgomQeIZotex/6kDzJAzMeqkzQBjiAgZwffxbQARJOCsc/S3OPseN0BXoVg7bbVBteZjy241+zoJAsWksTqcAeD8W0FxE7t2NaBm7BYo9guIqSlrnPccEEXJ/GBUnIFqE5Gk0Xf3/8zvpsB2e5yiMaDzQNNJ4VeAts5IE0DUtdMap5wKVNcHY5v6UsfcSdJXIy6SS67iZjxPgT74pg4ajXgOuKcO4KoO4JocvAFrBca5WI2kjAAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ClickType="Single" DisplayName="Click 'Abrir'" sap:VirtualizedContainerService.HintSize="562,156" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable ContentHash="UD96f186P0ShUjRnMNN25w" DesignTimeRectangle="747, 494, 88, 26" ElementType="Button" FriendlyName="'&amp;Abrir'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Abrir' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Abrir' check:text='&amp;amp;Abrir' /&gt;" Guid="752f748f-14cb-4280-8669-c45ae9858a84" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAeCAYAAAChf3k/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEkSURBVGhD7ZXLDYQwDES3Jy7UkmZSCJe04lLogA68a7xAEmB/WkY5TKQnFAY4PBvn1ve9EhwUDmYVPk0TuZBD4cMwkAt4KbzrOvJHKBwMhYOhcDAUDobCwTQvPIqqSqzuRxUdNYX83gkhPZ788FkAbQs3WaOojLWwL4Q3RtPCQ3r0Zgrrdcso/AKCpqWz505PGtbsKTzauPC1FcQzEUtEY1GcOlu+h6Nd4YXkTP68N3GzZc+LOe1ZXYDjDE+zwusxYvvt8MwlOna4SjzKauHle2gaFe6duF/LGKjF2R9A4b9j7VrMbKOWmo2GeaScFYPC3+K+93N2Gysuzg8/X14Ig8JJBoWDoXAwFA6GwsFQOBgKB/NWOPk/p8LJdeyEEwwUDqXXO4XI79+6xgfcAAAAAElFTkSuQmCC" InformativeScreenshot="a44576fc364617a3dacbb1e8e9bc73c7.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/SVCRzW7vG0WJ-GrksSxeGA" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Abrir' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+            </Sequence>
+            <Sequence DisplayName="Seleção de efeitos" sap:VirtualizedContainerService.HintSize="680,66" sap2010:WorkflowViewState.IdRef="Sequence_45">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[in_strEfeitos.ToUpper.Contains(&quot;IMUNIDADE&quot;)]" DisplayName="If Imunidade" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_10">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="375.2,252" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Efeito: Imunidade'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" Version="V1">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="0o9KIxuxRUCrj4c7V7JbWg" DesignTimeRectangle="1084, 751, 93, 30" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl aaname='Imunidade ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Imunidade ' tag='LABEL' type='' class='' check:innerText='Imunidade' /&gt;" Guid="4cfcef2a-5e8b-4b6e-aa42-1abbbdf842b2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGEAAAAiCAYAAABPyrdhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAR/SURBVGhD7Ze9a9taGMb1X2g1ZAkUbrZojCCDoIsgiyGDEQVj7mQ8mQxGdAjiDkFTTYeCvMlDwYGCsgSUoeAOl2Qo2EMHDx0Md9CQwevT9+hI9jmSXJwPEpV7hmfw6+ccnff9nU9ttVpB6XWlINRACkINpCDUQApCDaQg1EAKQg2kINRACkINpCDUQBKEeKBB0zS4N7KpruLjtRH8qP5f1GJk7+x9kH4EsKlm9mhR/f8OUhCeqv87hIdIQaiB/mwINy4f/HyJ+KID642eehqHDrzrZeqZXbpwDhtpXH/ThPtltmm/WiA4oX5PAizWsUwVCaRjIO9seYugZ2FfZ2PSsf+2i+Bf/j3JWypsgtvxZjwNi9rdJdUQ7heIKCf7aB86efn4TTiDELf/Cb5MyV0It2Wgwbx7FrqjWyTbIND4w4EDYy/v10LnIsZS9GTaEYKJ5qkB/ciBP44QjT3YaecW+mdN6ASEx31KnsUNeN/yPh4B4biJ5qEO852P8CrCZORm3xP7rYKQYPreoJgGo5W1/diFqVPBekUIU/hHbEIZcM4DTMgbXQbw3pkpEL09kQqWfHVhUFzLc70cokvtrV63DGEewmHj1QnoRYjoaoJgYKfw9FOaYEK/TDtCYB/3ML3fxJMvXR7Xu4jEWfN9CJPiB/9Ms9gjIFDMGMRIRO83DwdSvxUQ6NsW85wV2s75dyTvjQeTVrUzllcXAzn5m3mbCBd5bIahRbG/+oilFTLjuUk5LDFpM7j0rbnopZpd99McrI/iTvEACOYHuWFeQI0SluKrGH0WpyLy34+BYGL4veAt9VuGMPtgbmmbIOrJ3t+ptHVlE6tUA1I+Gdc5ZDnpwjg3IpjHNI7jobQadoYgLTemvICfigOL4VL8aRA6mCwL3rxfYZuQIbAZyH7TbJXacW09mO8TLOdTvmVceOi2zOwc2niXnzv0W0P/utCWqZhDPmnP2DZE25akCbx05dDukWz62BmCFGOqKCDXc0BwKwqZ9Sv0I0PIvlPZtgoCHeAjdl6wNpn2DNhtD16PraiNl7etqAFTIYfc+3vJk+F1IWTL/HkgPGwlsNmdHsCnPmK6+SXCece3NdnLarDTSqB9n3k7n4tnzXa9HITCPshU2k9Jj4eQF+9AukHligfZYSkBo9+Fw7Py/ChdNgRRfRjMdQ6Zd/uZ0IDx1sdUiL8AhDwpB+FP0Uc3i1P+5nguCPmYStdAuh01pX0+H5MJ/07wkRK6hbEblnzAZxNJbxagVeWQb4s2hgXAizFffQfnMswXgECJUR/sara+Y4/pjn3SoGI1S308CQJpNqJ3C/kaJy6Cy80bQ9fFlVAxpqsQQ3pLNLQGnFbFGZCD3LPhjibpm8KlHDTqV1oJorfinaAdUm6Fh+CLQGBaXvvoWPwVyw5A55y9Hrn3OSEwVX1r+ql4MDOft35Za/o+rLaPiL0Nsi2leJ9f/Yzhty1eTIJltDzEX7fUofBiTsex5SUuQVB6HSkINZCCUAMpCDWQglADKQg1kIJQAykINZCC8Opa4RfO3NOX1O9SDwAAAABJRU5ErkJggg==" InformativeScreenshot="4e3c224d4730db39096ebd14a52b7838.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/UZhu3wvUdke0Tii00Kk9qg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_34">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <If Condition="[in_strEfeitos.ToUpper.Contains(&quot;MUSCULAR&quot;)]" DisplayName="If Fortificação Muscular" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_11">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="375.2,252" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Efeito: Fortificação Muscular'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" Version="V1">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="TI1oghDukU6LA2pFTWS5Pw" DesignTimeRectangle="1213, 751, 190, 30" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl aaname='Fortificação Muscular ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fortificação Muscular ' tag='LABEL' type='' class='' check:innerText='Fortificação Muscular' /&gt;" Guid="b44b8644-f141-4c03-aa56-4108a9819609" ImageBase64="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" InformativeScreenshot="5babffe12f57ed1d9926e0e308985474.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/y0wpGSIWqEWyOOcNmHpBlw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_36">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <If Condition="[in_strEfeitos.ToUpper.Contains(&quot;RELAXANTE&quot;)]" DisplayName="If Relaxante" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_12">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="375.2,252" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Efeito: Relaxante'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" Version="V1">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="YYF-du-phk6daD2J_bMgMQ" DesignTimeRectangle="1439, 751, 90, 30" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl aaname='Relaxante ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Relaxante ' tag='LABEL' type='' class='' check:innerText='Relaxante' /&gt;" Guid="48dfc0c0-a673-46a0-bdf0-fda3e9623195" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAiCAYAAADWMm7UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAVTSURBVGhD7Vi/a+NKEPZ/odaQJhBIurg8wRWCFGdwY0hxmEAQr3gIF0GkMOaKw1wRzCtiUgTkIqAUDxx44GsCTnGQFA+nOHCKFCpSCFK4uMLt92akXWklb374XjhxoOIrsrsznv00881sKovFAiV+PUriC0JJfEEoiS8IJfEFoSS+IJTEF4SS+IJQEl8QSuILQob4YFhHpVJ5Gms11Pf7GAdZJ6shgNcgXw0PgXb/N0A4hXc0+l/xa4k3D32Mv45z8DFo11HlD2A04d1lHb0evzvxbxO/lvj6MMgcUhFeODDojHEwxlyz/zJK4hkrE79YTOBGWd/FtXb/JZTEM36K+C4TX+liktsL//XR/ViL5ahiYH3HRv8yzJx5KvDY1kRtjW0ZVdQaefsZBhbv1dC7SW0Zs2EzqkTreJaukxb7nRbM7arwWUF1uw77aIJQsV1cdWmvTvIZYjp0YG0Y0Vljw4IznKZn7z3UhZ8EnUnq50eA8ZGd2HNPbHV8TB/FvoLVif8+gMVOP/qZ4GdnrYhw410L/XPqCRceug2+sIHmUCFDQ3x4Yce2Ow4GbEs9xT9xUI8+Qo5k+fvWADO5dicIIZ/J2sMINtsbRN6J6FnnAzhRTBXUvlynPiPiTTR3a5r4lbPzANfU69z35Pe9C5993orEeKSEfMeEV1HveBjxHY7ooxt0dpuSNEf+CsTPEd54sLfJEZHR/TZP9/iS/APqxYXN5HCLzlsYfJdreeJn8PaoSjZ7y9J124dJ8RifFJIIs2NLiZPs2V+u4c+GLaqeraXKWCym6DNxqlRGxNPaEkHX6G3SeiY2fcVef6mRjy24lwovDJEU+Z6oJf45cEYMvmXlI7Yz0L1K1xJQhjJ5ZiIBq2ikkDW1nCMIyTFs9D7Hv52tqucx6fBdFKkUxKcxKmcPc2e18VOcIvGW7zTHuM0+HIzn6bqW+Mw4mZQc6dXpVDvJxBcx4Z4JGxUXvVgG2vKLP038PAwwvSIbkoTeoY261OYl4glScgjGrv/0R5yHCG4nFAuNw59d2A3Zg5aJt//O9yN5NxujUK5p4pfav0dvnPz9CYM/18mHqVT9q6UmxKjNkmHA/DTJkS8CiS7zDJJANYE/TNATehqDGjNVlnPSRYv/1hHPWf8hPp9pqAlCTKgaYpJjGBsmWu0Bunv89zLxuoqNiafGey/XNPFLqXoBqv/Xazw3j0jfl3UsLkc1K55DPnDSUdE33PMpglDxPR/D4aA1xM9OY4mprnFD44kkux9rLjXGA5oqglBJFln6b0i80PEttWG/gBWaK0nBpYstJmLTzTSh2bFJds9oPI1V1l8yqFzgN73Y56FeTrg/LBEvGxZLzL2P5lJjF02xQnGqdhGoUri5viXxMkHUtQT8obmCHYwe0vWViJdOokyiSSPJIqlxDRrxfqjnA/j7fF6dLnKBS3L/GOUkLBS2tJf0B4aYYpQsj7Of4j6VkiPJpSrMjXHhuR3N+5lm9zPEf1A/NE1vHZZiUoOvuT5BiVXj38uN3ysST5CjY26+lg8Y7RxMGZsSl88Y8TdVjHUQz7+jYQ8tmonZV5MJVDJJkpzVdfmwSj+GvIux48K7iOPp7ZkwDNL5Xa5QhcyViJdSRdI4JL/qHB9JpmaO1/xva3XiCcFZTHLmEUPIvlz5ldhCl3Q7m8maUn2cwmtbWI8+aGoXyksabpyd8qG0rZn5ZWaR3zimeeYVmrwiqQ/N/3FozaDsFP1kJeIJdyM4lhgG1Ikq/3I11mHt9zFRJEYiQ3yJX4eS+IJQEl8QSuILQkl8QSiJLwgl8QWhJL4glMQXggX+AywDNbBW8GjfAAAAAElFTkSuQmCC" InformativeScreenshot="ceb8a5ff90eda6d649eb94e6acf3cd18.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/9b_JuO9akUixY3iNFHD6sA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_38">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <If Condition="[in_strEfeitos.ToUpper.Contains(&quot;OSSEA&quot;)]" DisplayName="If Fortificação ossea" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_13">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="375.2,251.2" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Efeito: Fortificação Óssea'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" Version="V1">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="R0Q-ruTZBE-jG2ixDzuc0Q" DesignTimeRectangle="1091, 791, 162, 30" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl aaname='Fortificação ossea ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fortificação ossea ' tag='LABEL' type='' class='' check:innerText='Fortificação ossea' /&gt;" Guid="e8a6b81c-df8c-42ef-8a8a-35b954606e7a" ImageBase64="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" InformativeScreenshot="6815f4494cc9392c1f0e2731782f6bb2.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/OSq0LNgJtE22YW7Zei0FRg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_40">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <If Condition="[in_strEfeitos.ToUpper.Contains(&quot;VITAMINA D&quot;)]" DisplayName="If Vitamina D" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_14">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="375.2,251.2" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Efeito: Vitamina D'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" Version="V1">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="W-g7nWK1y0WHyZDE0ImGfg" DesignTimeRectangle="1303, 791, 97, 30" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl aaname='Vitamina D ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Vitamina D ' tag='LABEL' type='' class='' check:innerText='Vitamina D' /&gt;" Guid="be9c2001-6fbf-4e36-9901-315dd13d1a8a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGUAAAAiCAYAAABGIRcbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAUPSURBVGhD7Zi/a+NIFMf9X6g1pAksrLu4XMEVhhQrSGPYwoiDYK4yKQ6zRTBbGJHCmBRrUhzIxYFTLChwYDcLTrGgrZJiwSm2cJFCsIWKFG6/92Y0I4+kka2FvbMKFV+wZ978/My8eU+1zWaDSuVSBaWEqqCUUBWUEqqCUkJVUEqoCkoJVUEpoSooJVQFpYTaQvk2QatWQ60zQ6AY6BR86qJGttZ0jc13FxZrd7lM2KwXA0y+JNv9r7ofbOeoq//PtcSA7YtOxjHMsy7GdyvtXis3ZYVJizWyMXtOGiUVYNZR7HRQxIYM7mWbA6g0UFroDh04qi5sNI9YXQ11ugSrVNuE+wpu7f0LeZ7BZoOde/k3qgxQDi4JZYCltj7A/M8m36fmBx+hUpd8U+SGn7lYq+WKInAG+otQW89VQSHtg8IkvVMLk2/b8tRDH2J+wYwsuN/Vcqk13DOqN5SBUu5recnaq1L6elljPurCenMMQ9Qbr0zYlzM8/BA2Sp+D+xAPtwPYJ3Vh20Jv+sBPVfBlgu6p6OeIXMRN8rRl3ZeYO5vneg6n00Sdta3V0ew4mK+VtkLrxRjdMxPHRjRX/hZ0Bpg97jiQsYpA0XunFJQNwkWfL1TrwkQw0Bj627IUlOBxjvl1NJB9Tb8XPtYhs/UxfmNQeRP20IW3oLo7F87vJh/PUN2h6NN614ZxZGEw9ch2gh5vb6D7vo+m0UKfl7von4ryT8F2XnlQztpoG3VYl9EcZiMbJtt0owtPeUv9UTQvBsy9Y+vw4A71tnoVg8L21GR2F/P4UGWg8M7YwBoXtrpp0SANOF+V8qIP/b0D85UB+1bZOK4Q3h9s8m3M5GmVfdLi4zImuYDUdd+Ec/RYuQo2DwrBa09X27YkeVpjqC9LOOw2ayLR8C6KPNt/aw5tQgWhyLUq+62BQqdk2KDOUgtn/u83atyaJKOFolB2aD21yF5xc7JP5fREEgt966YilhXct8mF5UPpYc5vrqKnaDytd0hLzG2/bUEoZNdndvugbL46aJBh60Y5UeKUJsqYfhbKS4jgyY/cwchBryN9tgaK2ieXWOj7dLl0TQWgvHbgx+2ExHiNK8UtC4XBCj65OW865qEsu+3JfvP0i29KHBUot8K/YrdHk8MUhkKP9rQX+WQ+WdJRE9Y5i9tN+p+Fkl24WGgG1k9AUW2kNGsIH13xhlE5FwUElPA5V7SGRL95KghFumTloOVAke+HdGE+nNfUUJebFITCvgLwB/3dGMunAOHLtm71sWRQnj10+YPexviesm41MhSb+KugRK472V8uFJmzcHfF3VlOblIISgDvnE2QNv5JlklpwvADQ4k/I/2VctWk8J9eqt88FYFCh/2E2SQ9UD4U+TmFFuEx12X0sw8k0w4o/c/STm68ifGjLIsUEnD+zY3q4sDiwFDkxpvXD0m7H7SJPNmjuo9ZYEntgUI5mycz+tRbtgOKnFwDDXJdidxElQ6KuOLMVXkiTwlpk1jwUDuxMb5lcf8MkwuLErg67E50heObdWAom5DGYe6a5VSjGc2V8pmbHqwj9q3Kzq5XKwkl++2rf24V//aVEcX/ff4wp3ITVToodDP8UVtEVQYG4mtx8NmJs3OWHbfOx1EmnY7sDg2F6ZlylTjrN3B82sV4wfrKSQ0yklA0ogDH7PQw4f1l2+6GUukgqqCUUBWUEqqCUkJVUEqoCkoJVUEpoSooJVQFpXTa4F9BuuPSZBYO2wAAAABJRU5ErkJggg==" InformativeScreenshot="02d9d2768c89fe0f4e6723e835b72d3c.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/JYpkLxIuckG0bZO1c6Smng" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_42">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <If Condition="[in_strEfeitos.ToUpper.Contains(&quot;MEMÓRIA&quot;) or in_strEfeitos.ToUpper.Contains(&quot;MEMORIA&quot;)]" DisplayName="If Memoria" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_15">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="375.2,251.2" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Efeito: Memória'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_20" KeyModifiers="None" MouseButton="Left" Version="V1">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="a7EdBU6kOk6x37AYkygDcw" DesignTimeRectangle="1451, 791, 78, 30" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl aaname='Memoria ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Memoria ' tag='LABEL' type='' class='' check:innerText='Memoria' /&gt;" Guid="df79dfa3-e179-4b40-9211-527c04ab2e8d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFIAAAAiCAYAAADMDo5aAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASASURBVGhD7Zexa+NIFMb1X0xrSBNYiDurjCGF4BpBijNcEcxCMFccwkUQWxhzRRApgqs16ZTiwCkOvHAgNwGn8xaHr1jwFluoSCFI4WILt9+9Gc3Y0lhynLWaO6b4QJp5ejP6zXszb6zVagWjw2VAViQDsiIZkBXJgKxIBmRFMiArkgFZkQzIimRAVqQ8yG8hXMuCxXUeIs726foyRFPauvdxsc1/Req/e9Pi/j1UDtJyEX7L9GlafGxKOwOSqxjkWVNEW/shyRlvtMDwzEL9pP7/AFmBikH2hgKUdTlGku1XorR2rDqCm74BKVUCcorZDY+2DsZJpl9qcefAOgkweyoB+T1GdNuB846JfuvIRrs3wvwlY0Oa9qiP9uLF8xSDSwfHjN6tGuyLANNn7meBca8N+4i3Mxz/3Ef0Ne9D6HmGYdeVdhbYOwed2wjx96xdjPCc+unfFn96cLgtO0b7bo5lSWonf4/Qv2iu/Yq5nXcweNzO1FKQq88B6vTs/bXMfSDS2qG0vplhVQTyZYr+KQdYg9sLMZ5EGN220eSQGn1MMzAFyLMWWg2G5vsBRtz22kWNz8Hx4f/CCKpsJx82b2/QAqqxuL6GaHHfRy68uxGiyRhhL/XBfiLb9XgSZMMmMC6Chwjj+wDhZ+orAJl86kgfHoZkG/E53HlwBVQbAf9OzYFUDnI1Q3BCz90Iy6yNSmvuqADk7Mamtjr8R20B6Ie5b3a18SdAUpt9TYuytl0i6qbtTBs7PeDk2KItXVSLtRBqkZp88sC4b77gok2CzH0vtQVygfC9jRrPuqwd1z8DcX6w37Nz3gmSoFxTejMf0XJjE9+7aVrz9y2QFI08OgpLJwXIW/tLQTYx/JK3FWOQX/8x37569EV7/0m+y6xpflzk7YTSA9FifQlDgfQx1W0LIrJc9I8FtjtBphNl8CcqutLJ1FUE6SDV95SmPBV0DX87zoFLQW6XWSlIatf3QzmeAhn/0RLvW8Cl8v4lyLMhFrrtDpDLJMb8ieb/METwoQO3URNjvg2kjDCm3kV/JjV0kPL9NSkQ6Y/SvinG2mgNUq9jdZAyctcRqqkQZFG2FIGkAzA4l9CE6LA7bdM+3EdbtyW9ApJPhg4OSg/+s7m05tJByn1QHETKZocOBvkjEbkXSDofGvxbG/7DHHGS2e+XEbycbapXQfLJMxGFMUYXmbSWfTmQapDSPZKvqocxL22o7VCQao8sXriSPXIfkNKv9SEPS0hdjd8MUqZ3veuho594OkiCNe3x+pNO7YlWa9HkRPlyMVoX+QeD3OPU3iz8G0AqWL+O8xXLKsHoUtbGWkWxB0iKpCv5sUzxdd8WSBKvI0VaFNSR2g8fDpK0q448Jd96HblXaktb2hedq/QfeM3ZpvqY0T7Z4pGu+dkDJJ1cE1+s7vrQUSoCyaXfbOgG4VwO0ttKxq4SkFziZrS52dQabvnNZi+QpJc5wq66bXGfbfRpv0xUGaeVhXmQRj8sA7IiGZAVyYCsSAZkRTIgK5IBWZEMyIpkQFaiFf4FqqWtXklU23MAAAAASUVORK5CYII=" InformativeScreenshot="86c88f501bd44989aadd335ce30911d7.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/UWaBcm_HpUqu0uhk_JjFvg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_44">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Cabeçalho da Tabela'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="680,216" sap2010:WorkflowViewState.IdRef="NTypeInto_26" Text="[in_strCabecalhoTabela]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="J0koZbMQb0-x9NHouocB8w" DesignTimeRectangle="1263, 811, 213, 34" ElementType="InputBox" FriendlyName="'INPUT cabecalho-tabela-…'" FullSelectorArgument="&lt;webctrl id='cabecalho-tabela-nutricional' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='cabecalho-tabela-nutricional' tag='INPUT' type='text' class='border rounded-md px-2 py-1' aaname='Cabeçalho da Tabela:' /&gt;" Guid="e3e6e055-cfff-41e1-a06c-e44b5399280a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANkAAAAmCAYAAABJej66AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE7SURBVHhe7d2xbYNQGIVRKgbyOOxDx1IeglUQ3YtulCCsAJJj/u4c6Xa4/ISheHTLsjQzq5vIzIp3GNk4ju3xeLS+71vXdWZ2sXSSXtLNUU8vkc3z/H3xMAzt+Xy2dV0bcC2dpJd0k37S0b6rl8hywTRNPz8F3pV+0tG+qy2y3OpSIvCZdLT/67hFlvpyywM+k472d7Mtsjy8eQaDz6Wj9PQnsrwlAe6RnkQGhUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxQ4jcyQc3OP0SDiHm8I9Tg83dUw33OP0mO4s9fngBPzf5QcnMp9Ogvelk/SSbtLP5aeTfpdbXS7Ow1vekpjZ+dJJetn/RdzvMDIzu28iMyvd0r4A8QtXBUuhBnoAAAAASUVORK5CYII=" InformativeScreenshot="599b5952a26ca99a19262d73566ca443.png" IsResponsive="True" Reference="ZP3KN3wgLUe4q5FphCmWWw/_EtQuVE16kq84PBo5UouXw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1083, 816, 163, 24" ElementType="Text" FriendlyName="'Cabeçalho da Tabela'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label' idx='5' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='LABEL' aaname='' check:innerText='Cabeçalho da Tabela:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKcAAAAcCAYAAAAEG69aAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANYSURBVHhe7ZhLcgIxDES5IVW5T4qjkJvAPbLgFmwnM8NY1qflD0NVDKXFW8TIslpqmySH+/0+BcGIhDmDYQlzBsMS5gyGJcwZDEuYMxiWMGcwLI45L9PpcJgOnK/zdIOxBX7P03Hdf5zOv+Dzf+Dyven5vjzW/qlGU8dT3Kbz15bHpa7rNbUsZN+crujzPqw5rycmTNM5wDCnS5izjjQnDeowHX9ucL3rBQ1zurzOEJnbz7F/RjNvYc5SkatwIJr2JHgMH/yVGXzGFq9+lYAN1i8FMJR5+WVM2Zwyv7igen8hxqLqns+GveaPwEbPkF1zVvLyWoQ+MAM6Y0PW55izpkvMIK8zc+YGtjZED4owg8fQOW7cabrQecq8BBPk/kqS8xhTtNZY+grlBjMU9i1U6wAX0AGasyGvO8cFlsuLyxcUmLNFF8W45ux9klN8HrxpDi+MBsiGtcUl0fwV0mv5xvpGSz/bxoBBIFOgGre1fD5qaqFnKAacmfIXB10BmbMlL/WEa2MXfY2jmtmDYdZs7j26dpiTwZu9YMwpb0QWvojK50KU8biBffRr1WJOWaOMy/n0+SafAhlmobSPPttonYd3VsLLi2uRmik3JPWu7KFeXTu+1rUBGMac7LaZ9Yo511y+OTh+A19nTt0bOrPTnGZf4b8kbfNwzmrIm7R6F69uzpQLmHOHruY/iB6HMJOxQ9MhpjmdL2epWK+BGWbygvGMxk5zegOEPVtIWpU5vfw5rq0vHGvOtrxYg9QMjW/QuffpEubMg1JDYOvpkKZG8H0knMVta9QckCvVkW9uviCiBmCyvGevOXEurs9tNIoxfQEDA5e/hp1JW17SyrVR3LaGdIhHZlnT5+3TJc05k4eAQMUDkDkBVJwbx15qJlSjG2HJdT9rzmJ+isHk4QPWvezCAmpDTFhztuUt1ke5/Lj8kGkzNupyZmDM+QAMghWZEEZeP0/79G2bf679n9MYlBszYcWKPCLHo4bU0NRAY7pmc6r1DfENU0Dsm3Pa/LLniy7qr6rBw5pzoZ6X1yLqBDMv69fmlGtp3ejqM+fAcAOC5gWfw/uZc+Nx++RNCz6LNzOn/Ipo/UoN3pO3fTmDzyfMGQxLmDMYljBnMCxhzmBYwpzBoNynP3uiTkuDpxj7AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Legenda da Tabela'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="680,216" sap2010:WorkflowViewState.IdRef="NTypeInto_27" Text="[in_strLegendaTabela]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="3tXO-gFtN02vDXnWmt43vw" DesignTimeRectangle="1263, 869, 213, 34" ElementType="InputBox" FriendlyName="'INPUT legenda-tabela-nu…'" FullSelectorArgument="&lt;webctrl id='legenda-tabela-nutricional' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='legenda-tabela-nutricional' tag='INPUT' type='text' class='border rounded-md px-2 py-1' aaname='Legenda da Tabela:' /&gt;" Guid="b629e4ae-8a37-43e8-be83-93389480d8ea" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANkAAAAmCAYAAABJej66AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE7SURBVHhe7d2xbYNQGIVRKgbyOOxDx1IeglUQ3YtulCCsAJJj/u4c6Xa4/ISheHTLsjQzq5vIzIp3GNk4ju3xeLS+71vXdWZ2sXSSXtLNUU8vkc3z/H3xMAzt+Xy2dV0bcC2dpJd0k37S0b6rl8hywTRNPz8F3pV+0tG+qy2y3OpSIvCZdLT/67hFlvpyywM+k472d7Mtsjy8eQaDz6Wj9PQnsrwlAe6RnkQGhUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxUQGxQ4jcyQc3OP0SDiHm8I9Tg83dUw33OP0mO4s9fngBPzf5QcnMp9Ogvelk/SSbtLP5aeTfpdbXS7Ow1vekpjZ+dJJetn/RdzvMDIzu28iMyvd0r4A8QtXBUuhBnoAAAAASUVORK5CYII=" InformativeScreenshot="d9a095009c0fd479f316f14283ac3a57.png" IsResponsive="True" Reference="ZP3KN3wgLUe4q5FphCmWWw/oTfEK0huNEGYIUQPjx07xQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1083, 874, 148, 24" ElementType="Text" FriendlyName="'Legenda da Tabela'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label' idx='6' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='LABEL' aaname='' check:innerText='Legenda da Tabela:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJgAAAAcCAYAAACd43bvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKxSURBVHhe7ZhNcsIwDIW5ITPcp5Oj0JvAPbrgFmxdQmz9WTIiiRalWnwzncR+kZ6eE6aH+/1ekiSKDFgSSgYsCSUDloSSAUtCyYAloWTAklBYwC5fh3I4PPi6sEV/l0uZ5n4eTFft/hb20r6V86n6bnIs5x9tL7Lb7H7O5eh8pocM2GoyYB4yYKuJ0b59H5cZnM7lpty3+LiAgREVzWTQq5qWeWydbIw1jEOdOX7fcB1buzBdjRBcJ1iz4DAzUptgBuyFLp0d81MJ6nB2VsBe9WXsWxUwHgiEDlw2wYCm7c8DNC0GK3l7XWdUYyqXZ00KkdoCNWAOXWsmT4jWy9lpQfH0tVvAQEgTb9fwdGPoyNunNdwK18xs1+hwoS6iVa9hoLEuGvIWgtZjH0xxIgmR2hItYB5dDI4ejOfebk7KtYH2mr7eDhg1tqc+UGuE7q3moSkadsMzvFZ8E/LPpvEZeyLfnpZZkdo9WsAQW1efHa/9vdlpNb/f184Bq2bDyeEBk2+nccDGDfsChtdbCOz6LbMitXu0gHl0mx+8Rn7dNTvF7y19rQ+YesIqRsDkXs/zfAGzDJZvmf7TOj6xC5Hakt5fn67uJT8crtl12tv62vAbDE9uHygsCodCCm0Nwj4stDPBaEbWCvtIqPGa53TaZkVqS2DPoH9NF/ygz5L+emYnn7exLz1gFnWY1jp6wukA4P5JmEdOmAQMUBpkNcBhIAFWWPRGa0ZmRWpzuoA5dYezAy3H7Dq/nX0Zc1oVMG0t/3z0a+xXdB8yCNeMO2Az3Az1f1WgN7NoNi2tByRSG1E9cuhSP+DvGeb1Arv/gNWm+e3pS9v3gAVsP8gwtFCyUCSfTFDA+lNCYW+o5KMJC9iMFrIM1/8iNGBJkgFLQsmAJaFkwJJQMmBJKBmwJJB7+QXr9rD3ikjNLgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="680,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][k(pgdn)][u(hk)]" Version="V1" />
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtCompostos]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="680,1134" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,1018" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Composto'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_28" Text="[CurrentRow(&quot;composto&quot;).ToString]" Version="V1">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="TL7WED9ZoU2gWXwuHNftAw" DesignTimeRectangle="1224, 991, 213, 34" ElementType="InputBox" FriendlyName="'INPUT composto-nutricio…'" FullSelectorArgument="&lt;webctrl id='composto-nutricional' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='composto-nutricional' tag='INPUT' type='text' class='border rounded-md px-2 py-1' aaname='Composto: ' /&gt;" Guid="220e2485-ada5-42ac-88ed-fb54dc8c1621" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANkAAAAmCAYAAABJej66AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFCSURBVHhe7d2xTcNQGIVRV5knjONlgAGyVEqEGCRC6d09dBFYL8K2FOK/O0e6nVN+cuziebh+XpqZ1U1kZsVbjOz15bk9HY/tcDi0YRjMbGPpJL2km6WebiL7eH/7vngcx3Y+n9s0TQ3Ylk7SS7pJP+mo7+omslxwOp1+fgrcK/2ko76rObLc6lIi8Jh01P91nCNLfbnlAY9JR/3dbI4sD2+eweBx6Sg9/Yksb0mAfaQnkUEhkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUGxxcgcCQf7WD0SzuGmsI/Vw00d0w37WD2mO0t9PjgB/7f5wYnMp5PgfukkvaSb9LP56aTf5VaXi/PwlrckZra+dJJe+r+I/RYjM7P9JjKz0l3aF5OT0YbASaqdAAAAAElFTkSuQmCC" InformativeScreenshot="4b020dc873052cffa74499b87c55d241.png" IsResponsive="True" Reference="ZP3KN3wgLUe4q5FphCmWWw/W6V3rulEeUyT0poEvvjMUQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="1131, 996, 77, 24" ElementType="Text" FriendlyName="'Composto'" FullSelectorArgument="&lt;webctrl aaname='Composto: ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Composto: ' tag='LABEL' type='' class='' check:innerText='Composto:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFEAAAAcCAYAAAAZSVOEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIISURBVGhD7ZTNbcMwDIW9X4LMkyCDBB4ksNcIcsgMQdEZVJeS7CeScn7MtknBwztYoijy47Oaz49rcC2TQzSQQzSQQzSQQzSQQzSQQzRQBeIx7JsmNKB1e1bi3lynQ1hvj/reAxIQL+2KoO07XE9QN4dwgdj31jm0m6Enc4jfkxEAy73/48gfgthv59x2Dn3HAfLffhd62CdXD/n65O6oVWhPk+NJeCcNa4jp4tByjDZYqncuptsV+9M99bqLugZx0+SekBFAjJO522nJmTjJ2JRS0BgDxfO1/J3zJti0lmBMkJKLcGg8hr4hh3CedGKsH87c+fcBxNjMvRB115Y5IkRsRIIe13KuSuFFjAAkY+Ld5T2lGMR0L3fz7TxPQ5RTzLrVCK0x+BKiBBTBxVzVxhDu6Gj9KRA9VAZTg4t68neux/4aRJZjisGz8HyQcE+DqAzmMYisGUXT/g0npnVLiJhLy0uqgSBloHn/EScq66AC4iz1tJfdpwPX3sRnIEqX43BqDes1gQogDGKl9+rAQCXEQfEQT5amiAWmS9GN1ARcuARiAUlASwAwN8VMdWt3l5Dl3xTrh3sqA+USEEljI5P0ROzNYXCWQNy3WIN03XhuJibejzFlLRk8nuVnVGey+nWIf6kMUXtSXlQO0UAO0UCvB/EN5RAN5BAN5BAN5BAN5BAX6xq+ANU71nmQod7nAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Porção'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_29" Text="[CurrentRow(&quot;porcao&quot;).ToString]" Version="V1">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="kQnfaGEVB0qFkHGQBrrpgQ" DesignTimeRectangle="1224, 1041, 213, 34" ElementType="InputBox" FriendlyName="'INPUT porcao-nutricional'" FullSelectorArgument="&lt;webctrl id='porcao-nutricional' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='porcao-nutricional' tag='INPUT' type='text' class='border rounded-md px-2 py-1' aaname='Porção: ' /&gt;" Guid="5942f6ce-a694-4759-ba0f-d4334591326b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANkAAAAmCAYAAABJej66AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFCSURBVHhe7d2xTcNQGIVRV5knjONlgAGyVEqEGCRC6d09dBFYL8K2FOK/O0e6nVN+cuziebh+XpqZ1U1kZsVbjOz15bk9HY/tcDi0YRjMbGPpJL2km6WebiL7eH/7vngcx3Y+n9s0TQ3Ylk7SS7pJP+mo7+omslxwOp1+fgrcK/2ko76rObLc6lIi8Jh01P91nCNLfbnlAY9JR/3dbI4sD2+eweBx6Sg9/Yksb0mAfaQnkUEhkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUGxxcgcCQf7WD0SzuGmsI/Vw00d0w37WD2mO0t9PjgB/7f5wYnMp5PgfukkvaSb9LP56aTf5VaXi/PwlrckZra+dJJe+r+I/RYjM7P9JjKz0l3aF5OT0YbASaqdAAAAAElFTkSuQmCC" InformativeScreenshot="bc8f0f05d448478eec425ecad17960e8.png" IsResponsive="True" Reference="ZP3KN3wgLUe4q5FphCmWWw/QhFudDW9n0O9F8nN9t6-Iw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="1153, 1046, 55, 24" ElementType="Text" FriendlyName="'Porção'" FullSelectorArgument="&lt;webctrl aaname='Porção: ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Porção: ' tag='LABEL' type='' class='' check:innerText='Porção:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAAcCAYAAADfjMc9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGPSURBVFhH7ZZrrsIgEIXZn8b1aFyIYSFGt2H84RqMuWvg8hgKtAc69tY2F/nxJbU85pyZgSp+Xk/1LTSztdLM1kozWyup2ctBCSEwu5N6xHM/yHVPMfdn/fusjvr5eMFz3wGY3Sh5i95Z7kruFjJ8O6mtOKirfn7IzayJZprVWBGZsX/Cm2bTduoyT2zlPVpj2k/vJf3RiPalvbq1/coNjtNQUzk2jff25ZvtjblzNTQQgrqzJqgl033SpNm9vDCgwcUK+4zHxjDNknAvCFTZ4LLtRbk1fQFWqL14wrsYOB7rYsXGALMma4BYQC4piRB0i+IE5HAV9FA8VmwMv41j7DyQRabZkqA04cAgKzbmD2Zz2fXvp1SWPnGlNmbFxkwzm8kiOrPpnIyZDlz55EJixcZMM6sZvxEzLWtjpO+DUPDnhebHa8ZjYyabNTiRTkjfQNasgcSFtXFF3LpkDJgpx6bx4nd2UUwV+YmdgxXNGlzbwup/gJXM0tn0bQrnzM/KlV2WZrZWmtla+SKzT/ULyRx1ZPGZMNgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Valor Diário'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_30" Text="[CurrentRow(&quot;valorDiario&quot;).ToString]" Version="V1">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="HIeB82HQBkiCYxG-E9BDEw" DesignTimeRectangle="1224, 1091, 213, 34" ElementType="InputBox" FriendlyName="'INPUT valor-diario-nutr…'" FullSelectorArgument="&lt;webctrl id='valor-diario-nutricional' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='valor-diario-nutricional' tag='INPUT' type='text' class='border rounded-md px-2 py-1' aaname='Valor Diário: ' /&gt;" Guid="0a25760e-3dc8-4be4-a044-a01634222ea2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANkAAAAmCAYAAABJej66AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFCSURBVHhe7d2xTcNQGIVRV5knjONlgAGyVEqEGCRC6d09dBFYL8K2FOK/O0e6nVN+cuziebh+XpqZ1U1kZsVbjOz15bk9HY/tcDi0YRjMbGPpJL2km6WebiL7eH/7vngcx3Y+n9s0TQ3Ylk7SS7pJP+mo7+omslxwOp1+fgrcK/2ko76rObLc6lIi8Jh01P91nCNLfbnlAY9JR/3dbI4sD2+eweBx6Sg9/Yksb0mAfaQnkUEhkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUExkUGxxcgcCQf7WD0SzuGmsI/Vw00d0w37WD2mO0t9PjgB/7f5wYnMp5PgfukkvaSb9LP56aTf5VaXi/PwlrckZra+dJJe+r+I/RYjM7P9JjKz0l3aF5OT0YbASaqdAAAAAElFTkSuQmCC" InformativeScreenshot="20fbc721b966655d84fb2acbf3734668.png" IsResponsive="True" Reference="ZP3KN3wgLUe4q5FphCmWWw/D9yFocVvRk27nuLSRRW6IQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="1122, 1096, 87, 24" ElementType="Text" FriendlyName="'Valor Diário'" FullSelectorArgument="&lt;webctrl aaname='Valor Diário: ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Valor Diário: ' tag='LABEL' type='' class='' check:innerText='Valor Diário:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFsAAAAcCAYAAAAOa8NNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJhSURBVGhD7ZVRksIgDIZ7Px3Po+NBnB7E0Ws4PngGZ2fPwFJIaPIT2rpVdh94+B4sEMKXgN3319M16tBkV6TJrkiTXZEmuyJNdkWa7IoE2dd957pu4/qbPWng0W9m50Turt91btvfjbGVXA4+hyHXnOMF55/d0fw+jnXdwV2zMSDsuWDeAmJn305uO2y+P5uTUnK7k3uY45JPyzYKTvkv3TM0zqKzvBd6RqKgYgWpo+wuQf5A9tzYP2F8syeExmdmLET8LVBdYsnma8tAUYe9fYye45a6blIoNUy6ncYzQmcc0bFCx+99HqHxKFZYo/ONT+oYBxurdHPEHyQJyZ6S+J0DBtEqEK4D2cYThcVLErK9gUnZmBvINtZiHixRyQPZcY2I88ITJmTzZkbXpeBGt3j0IbVsPcboAs5JTMzM0x2lcw15YDEhXvn89I3E4vnNdQZKdl4lupqZrAHqaMaUjVd7RBVBHmiKFbIlsTsZkI1nlbmV9i8UAdGyPUqCEUQlSvPUGkP2WDyIw2veJFvnAbLDWsqbY0C8ZbKNPH8rWyaQXY9C0DnZxc7m76VDICBHg4WVsgt5QLx1nV3KaySXnZI+Q/IeUwo9J6ZsLIRek2KbcQ1KhzXHpGzociLk9orsQrNlTVnAkM2LdSIB2kwWICY8wJtBh9Ea2VVxjUhurWwjL7OzpcgQK+bO8mZle7BA9t42puzUrcb1l0kG/JxYHE4AZAcoHjNzoCK4twC7Le9myGHYD0QtkZ3miVhmp2McT0F24xM02RVpsivSZFekya5Ik12RJrsiTXZFmuxqPN0PuWqeBZNO2oYAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Adicionar composto'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_21" KeyModifiers="None" MouseButton="Left" Version="V1">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="MhUfBqFttECBZlAabs8Dfg" DesignTimeRectangle="1249, 1141, 189, 42" ElementType="Button" FriendlyName="'Adicionar composto'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='' class='px-4 py-2 border border-primary-olivia-dark rounded-md font-semibold hover:bg-primary-olivia-dark hover:text-complement-background-white transition-colors duration-300' aaname=' Adicionar composto ' check:innerText='Adicionar composto' /&gt;" Guid="cc41c7d5-39b4-4171-9d22-8c9b1a968ad6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMEAAAAuCAYAAACRUH3LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARBSURBVHhe7Z2xjtQwEIb3DWh4CwoeAImCdk9XUNPwBLS72hrxAojTSvAWnPYqpKupTlvcAyAhTohnMDuXZDwejx0nqyxs/BdfcbYzGY//30600mXx5/eDA6BmYAJQPaYJPn5+716/feGev3rqnr18AsDZQhomLZOmLa0TgQn2+++PF7zbvHHfbr+6Xz9/BIMBODdIw6Rl0jRpmzSuxwQmoEGfvnwIBgAwF0jbpHHdziag44LcIjsBmBukcf1oxCYgh9CxITsBmBukcX0asAnoBQLvAGDukMZJ67KNTUBv0rIDgLmitQ4TgOqACUD1wASgemACUD0wAagemABUD0wAqud0Jtit3WKxaFm67Z0xxuLuyl0E11y7TRtns1NjM9xvl829L6/cvdEP/hNovU+8Riczwc2qM0DDxXZvjouACeqh2yjnaYJOuEu3WQ0UY2QCMFtmbQI5uT5R68emXelJsHfby+46Ob4heRIE9zP6g3z9vYnoNOOxHpkjn4artY+zug5jSHRu1tji/NfuJsjv8HfQL9qCdrkGDeYJ3JfHAV4DY0zUdyCob0H8sZzEBN3iN5PyYo1EpCcakDNBKM74GtsEVuEbLDHYcA7JcT4H/UhIpB4Lk7kJIxyd/+Uy7uvqUzrvwjySY9r7Wf1dbYrmeQQnMEEsWp6UcjOLRLR74aRN4Ivki+J33UY00T3FInshitOkE5sUAwtQmE7F97HiPOO5pPDXcjzOo712RP6WqOK2tobmvMviW+O6uSfnQ23dJih1UTrPI5jeBLy7W7uTFEMsGntsWly+SDHaBJEpOnS+Zq6xySRe7A2RCfoWju+Z3umOyj/blp+3jl+ahzdZg7lW3TUiVvE8j2ByE2hBaHwxEibg9pQJ/K4wygRakIViiATNixIz2AQFCzw8fxGrpM0aY7QX5yF37wARP2eC3vjjmdgEXrBp4iIFJuDJpkzgxfXvTgKxwBwvnWevCQoWeHj+IlZJW2LeOn5xHgquxQFet5wJBsYfwrQmyCXKRTZEIibsi5U2ARdK3EcXLyqmuL83j/GsmRBDKOg4Jz/3ESYQ8ZIn5eD8xRqUtIn4Pt9c/Fwe/m8/xqiHpZei+O3YkUxqgvyi5wsakzaBbNNERjENprEWofAkMBhuAmlsxej8B7YVrUVDUR5iU9DwOuoxbZ2K4h/BhCawdrMQawcPi38o9ujfCcJ+ywSP6MLrfs4nZwJqC41I9+Z76sUsMMEjfbmVjCkRvNUm5x38ThDWgRmTqxErELysU0n8kUx6EoAzJmH+OQITABuYACaoHpgAJgD1ABOA6oEJQPXABKB6YAJQPTABqB6YAFRP0gT41+ygBrL/mh0f6QA1kP1IBz7XBGog+7kmghyCD/eBudL74T4Cn3AFc4M0TFomTZO2ez/h2kHHBV1ALxD0Jg3AuUIaJi3rRyCJaQIAagImAJXz4P4C53qWcyk+eZYAAAAASUVORK5CYII=" InformativeScreenshot="1e9f88c346f5cef9211c9b50120adcca.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/lpnqkHFv4Ui2E8OVsUzKVA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="680,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][k(pgdn)][u(hk)]" Version="V1" />
+            <uix:NClick ClickType="Single" DisplayName="Click 'Cadastrar produto'" sap:VirtualizedContainerService.HintSize="680,156" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="BMKbSWQD1EiLF3DvAelhKg" DesignTimeRectangle="1136, 931, 140, 24" ElementType="Text" FriendlyName="'Cadastrar produto'" FullSelectorArgument="&lt;webctrl aaname=' Cadastrar produto ' tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Cadastrar produto ' tag='H3' type='' class='font-bold text-complement-background-white' check:innerText='Cadastrar produto' /&gt;" Guid="5cc01f19-0919-4ae6-945a-94feb50fb111" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJAAAAAcCAYAAACONDYbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMkSURBVHhe7ZgxcttADEWTxtf1jJscxeNTuLRPoJadD+BGnUq1jCgS2A/sx4rkMjPJBMUrtAR2P4C/lEY/fv56GpNkL2mgpIs0UNJFGijpIg2UdJEGSrpIAyVdcAOdhvF6vRrOXy913C7exmHZczix5308f50P1Ppv8Pq9zOn7jT5vM81jGF/ps8dUBlIxjMvn+Ozit/PnDCTa00Aref8cz/dZHGSg6fbOZjmPH+9s/YjhpIGO5i8xUGuwL+PHhQxGBRSqXBcznIJzqq9Na2LUJ5T8WR8+k/zS3KHkS6Mf6NeLc7nlyv70LYw1WZ2mZ3reeRy+yWWt9LDBulpvtXgDFd2o1fWd/EwxBvTPg2+fYiAVv9KNpPkzrYZYdFismDuipTaPMO+xwkDAfagr9OObV6G3PNY3oSaiZy41hj2AftI6gYMMROu+U3ujGEg3XGcgOaTcMCcQYnBPFCdxMmQ1lDZ6aZ5+Lvuw17as4a0vBsJBbNUP2ihgIBiani1raCBjRMgn9bD8ulclV3W3DGRyYeawX+kNGNfo7jAQUoY0Mwssh+JAaSGKv2EydGjwHa6xaSBXOML1R4NgBDXpMPxFsGYOe+/iIz2+xh4DhTUHGvd/hbFX4ELbQGW9GlQFNDo4j5lllYEe6t9jIGcMv/7IQNU5Nj/So+tHGsj3K/DHyh/RyyB0U3hTqMg6nw20jiufdf+o0YI+nygFrTfQOv3bDeR65+uI6gpudxUfGM3XeIiBfM2BRjAQJLsCy7oMh4iBG10NgAmUONLUSgcTT/KYWbiBNurfYCCM1bNlLTIQ5jPtVT7ohrXKQK2+m1zQA/uViwgXzvTRGcgEMrQ57TgViI0hzHGtGCmscR4b2MK0PzfQOv27DERoDmwBB2yxsb5Gg9SIpiLUehaWOuMz7NtnwhloAW6jYL+GJmzTJlHaBDMsH1c+80LmhkkR9BYI7jYwTdxAPNbr32Mg/z+Q1jjRMJB9LtQDmzADvmmlNboZRv+/GeNind4DQQ+4gZKN8OH8D6SBDiENlHSRBkqSXaSBki7SQEkXaaCkizRQ0kUaKOngafwN0PG4wAMTvKQAAAAASUVORK5CYII=" InformativeScreenshot="eb753fb9e3f314549d75c321c2543e5a.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/gif_2IT17km0NzqKQZ_oWA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1100, 915, 212, 56" ElementType="Button" FriendlyName="'Cadastrar produto'" FullSelectorArgument="&lt;webctrl aaname=' Cadastrar produto ' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Cadastrar produto ' tag='BUTTON' type='' class='cursor-pointer absolute bottom-8 right-40 py-4 px-9 bg-primary-green-dark rounded-lg hover:opacity-80 group' check:innerText='Cadastrar produto' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANgAAAA8CAYAAAAE9XR5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASmSURBVHhe7ZkxUuMwFEB3i92Ce9BwDwruwQwlMzQ7XIELMHAEGkrooKJNR0FJk44yrTc/tqQv6cuxiQUO84pXxJbkL/3/JCf5tVqtGgCoA4IBVKQo2NPbc3N6d9YcXh01fy4Pmt///gJAhzghbogj4orlkGAKJp2sQQHARpyxXMoEO749MQcAgH7EndSnSDBOLoDdSE8yL5i8R1odAGAc+juZF4zTC2Aa9CnmBZNfRKzGADAOcSkTjJ/iAaZBXMoEsxoCwOdAMICKIBhARRAMoCIIBlARBAOoCIIBVATBACqCYAAVQTCAiiAYQEUQDKAiCAZQkf0S7GXhA3YsXy/stqO5aRbdmIsX6/5unL8uJ4x1P7h+7/L0fmPe70fysWiuzXv7g6vT2Qvmk2Xx8dicG33GUU8wFzuCDeT+sVlucoFgX4Ls/m18y+bh3ro+RfEi2NQg2F4I1lf4F83Dh1G4PkGBrG/SZvFSeE72WhpLruNzhP5tfPqe6x+KbxH6u0LcEr/fWD7Wfd345imu5xTHGa2Zf96yWbwbm1kWj1X4yVzXc0kFC3HrWJN1N74GRIKm9yd5e6mHi3O+gvnkDtzNjOJs6SuYGF/MVrI3uFhyuRztGAMEU2yKfkD8+uT2mKdEOT7BS2Y+s5tjcQ3UeprzVEwkmDnvDfM96VyM8xXML/iwRXRJCDt0kkDVRo+pk+faOQm8cL4Qu+Lyn8M41muRu6ZPjSCYLtSx8avYTJRgqqj9s901LVgkqupvzMfqn69V6Ovj7hMs6qtyrsYLa6PEjuKeD5vY1vwYwTShiFvaBIak6II3E+1Jd2gnhSrADXaMvYL1FIYdf6lQLQpz8sWabhSx7MW1T9qX4knnuItgxTnvUB9fQRvbT3pFtF4xOvoFC9ezQs5QhVh4niXTIMG2xv8ZwRJx0uvbBMueE/cvxeOvTylYul5j6+OL2cS8Zk9/5OgK1S+6Oml8EvP+VsHn7cJnP36pEB3+vhASPlywYfGPFyxZu3QepXmVToe0fUHEdI6TCJbOuRTjTGhjm7VganGTAgjXXfEayVInQlagVgJdO6Posjis5Br9LJlswUbGP0Iw3dY/210rCab7W7Fn/VXc6lomWN+6R31VPGq8sFGpDSlax/ng5jZrwaKFtPDF09/OJ1AXjkHbrq+NS3zP86yC7pDxbcGGxf8pwQx6C7pDCxATt03nGOHmqKUzyOPp6OZZfsY8Ty/BxThzwTrUbu6IX/OEuKgkab5IomJO24XPdqLbgnJJNndRR7ab5jHZgtlt0/g/I1j6P5ifo9AjWHzfYRd0JMA6VnOOSQ5L/z9GYut5pjWwdQ2+FxfnfggGI7GLF74OBPvRINh3g2A/GgT7bhAMoCIIBlARBAOoCIIBVATBACqCYAAVQTCAiiAYQEUQDKAiCAZQEQQDqAiCAVQkE+zP5YHZEADGIS5lgh1eHZmNAWAc4lIm2OndmdkYAMYhLmWCPb09m40BYBziUiaYwCkGsBv69BIiwYTj2xOzIwD0I+6kPmWCCZxkAONITy6HKZgg75HSSX4R4Sd8gBhxQtwQR/R3rpSiYACwOwgGUI1V8x/dDlCJWiLWbwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Get Text 'Produto cadastrado?'" sap:VirtualizedContainerService.HintSize="680,156" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="7be12bf8-9c42-4fda-81ce-53c0dc9c45d5" Timeout="60" Version="V1">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/register-admins/123" ContentHash="bZ3ACmuiyEWl9MxSAFEfjA" DesignTimeRectangle="964, 1268, 293, 28" ElementType="Text" FriendlyName="'Produto cadastrado?'" FullSelectorArgument="&lt;webctrl tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' type='' class='font-bold text-xl text-primary-olivia-dark' /&gt;" Guid="187ada02-4c22-4339-8c49-ee8df5e6e8ad" ImageBase64="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" InformativeScreenshot="01b09769e7422cad827da8bcdd3e1b00.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/iie4b7MI-0KnwdwqeaoNPQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cadastro de Produto' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="x:String">[strResultado]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <If Condition="[strResultado.ToUpper.Contains(&quot;ERRO&quot;)]" DisplayName="If erro cadastrar" sap:VirtualizedContainerService.HintSize="680,344" sap2010:WorkflowViewState.IdRef="If_16">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="242,116" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[new BusinessRuleException(strResultado)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,185" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[strResultado]" />
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAqHSURBVHhe7V17cFTlFY/0YVvh3pv4oqKVjqgku4lijCGEvbuEJBCS8Ep4FUKoyAy1rWKLFCFIRhQp5WURkdiU0EEF2goC4aUZKA0UGF6BACEtajvtH53af2o7NBT4es7Nucvm5rube7N3We7u95v5DZnJuef7zvlxvtf9spskICAgICAgICAgICAgICCQiMjJuf/r6f5eOWl+5bsev/SyR5WXeFRpldcvL/b4lFkef3Jp/4DSl8wFogHv0Dvu9arK85D4gyBAG5BZ4F88fvkdb0AJgIse7Z4EIoJX7ZkKImyA5F4xJNsuW72qPD0zM+kr5FrADjLzk+U0VXkDEvk/Q2Ij5fk0nzyUmhGwApgXsiBxlwyJdJrr+hUl3U5NCpjBoypTIVmRDk8WqRzy5Egp1LSAEe2Ttny9c+JM+V/gn4GHgQ1QWc3w7+dAnq0JlXOP5t51H3VBQAdVhgUxpL/h3ILzgNkE7VVTHgBxngX7vcBrHZ/n8qIQJQSpAWkgJKWrYepzEOLHfQNJX6PHLAGeGeDxybs5/owUoiBwNQXJ+NSQnA6E5Wr94wFFoUe6BRgOx4KvL4y+DRSi0NKWlxyN+Ptx45K+ROYRIV1NTgefnxjbMLD1sbw7+9AjiYX2TV+YfYZP/imZOgasAPB9sVNbHZmYlQITdB0nGTp3OVUZRuAxDK6uOG2GMrEqpT0pphP53/tlp0hkGhVoleKXWzhthzJxKsXrl57jJEBjmk/6IZnZRiCQ9GVvnvyQlTOrVN83vilEIcDK6Xec4HHe+MzjSfoqmdlCmiqPBx//JF//9vikH9CvTKGJosoX6Bkzxrco+D4DgsRddufg/fJSMrOF1ECyF57vfCzvkxaQiSkSXhTaCPKChgT2yiUzW4CKm8/1B/T65BfJzBSewB29wTYxRYEVTiUnWOQX3V1ZQWXN4fgL0sq8RKKcNz5rYPyJgsMIJ1AcrlrIxDYyVPnb4OM/nXze4HXwP4PMTZGQouCGjxMkTuj7yaRboEn9aie/N3gNDzHJ3BQJJwpsCFdyAgQqO8mk24DldAX4CnfCexXmmwlkbgqLm8f4EAUCXcQJDoes42QSEbTbKF2IgtVE5qbIGNTzHhDvLOf5ULp/R+/xKS9wAkP+lUwiBu5BOP5D2Zbml4rI3BQJUSnewb1KOEEhr2ECyCxiwP/u2Zw2QnnZyoUHTZT2t5E8HzrdKwpeYuMEpBGSOJ3MHIHpiu4GYUffM43MTYHDV1yLoh2RcIOStpOJY4AqeI3flk5pG5mGRVyLAoLUcIJBXk3LTfGQmWOASlnOaUtnK5l1CTqi6eo9vftEweudnECIzlcJ4DbwvaZzWxp/SzZhYXHVpdN1ovTAThuCCKEykuycxG1QmW8Z2vpHqio9TL83hU0xdLpLFJzAOUHo/BcOD2TqKDwBaTjMBSugjZ9YWdV1Uwyd7hEFXyJBh8MdUXwa62AiFEOne0TBfQB02PyCnF9uiVUwDomh0z2iwCS+ihNAKG/68cQAX8+7od0zhn5ESnccs+ArW5jED3ECuEGoFHyzR49EFQ5XhpHuqBS6wdhk6LyRUQ8mSpVhpDsqJdYHeTdJDJ1ClHC4yWLoFKLwECMxdMaRKA4siWMshk4hCsKuGINK+rJ5i2eyrbs2sqMnDrALF5vYqbNH2OEjB9imzRtZ1cL5bOTYYpZfMogNLOjHvP5krh8TJrYodsTIzO/Nframip29cIK1XmoOy0YQp/qValY+bjyIU8IGFfbn+jRhfIlidZ9iR4ySyU+yA4d2c5Nvxl9/sFkTBFk0Ko/rNwwTSxQ7Ykz5XgE73XyUm3Qznmo6yiqnTdPEGFtexh4f0pvruwsmhih2xCienGlbDOTrS14LVoc6PIPr2yJbsb/U9VsXOFdAZ8P/BZRfakbx6BENdo5D0gMp7ODhvdyEh+OufTuCYpSMGQa+lE6+7VE51N2/BLipsFQpqnxBrxQ7lYGctaCCm3CdTc3H2foNtTB5L2RLlr7Otu54nzWdO8ZKJubCCiuXlZWXs8y8+7m+bdMvrdCCvtVhpVKwIvAll92Dwt/sqOMKgdyzbyebRnNE8ehCmCPu1Z55quiB4PPp/juDPztAfDWRR2Hf2rA0fHV9IaETT5xu5IpRv2c7Gz9hIolR0OU+I2tYH/ZE/j3az+n+FLv7khAq51zzKUYWhy9bPNdykivIwuqXg3PE4GGeDs9g4qc9V8zeqFnEPj64vcOe5TxsIBsO7GU1tetYReVUrbICRZnssUC7WFaI12Mp5FsfFivFMk/C7jtUCJ2/rKsNCpJfmqvZjpo2kK1Zv4SdsrgiO3H6iDb3oI8xZWNg45jaqX0uYfUIobrnQ9icrJT6j7Zwk9nSeobtqN/GNr63ge3YuZUdP32Ya2eFq9f8PCjukOIsbj+MTFUVlcJ1B5yqlOplz3OT6CQv/uls8IgFaRwCeYTFydsUqnvgRKXkFD9oeQiKhDh8TamYqgmCu3oLc8onFKa74ESlzHnlGW4SnebadW8FqySvOJvbl1Cm5ikPUpjughOVsmxNFWv54xluIs145twJbZ5ZuWoFmzN3Dnv2hRlsdc1SbYji2Tf+YX9QkDFlo6Hd8Lv7VFUaQSG6D05UyqSZ+azx6EfcZOrUlrX797DlK5ax70yerC1rfcPTO2wQ36xdzH0WFwrjxk8IiqJvNE3pU2ZReO6EE5WCZ1sozLK1Vez9D2rYlg/r2Oatv2I161ezedWzWWl5ARsyIovlFD7KMgJ3cX2MqszmCoJ8evozQUGeHPot7vM3qCyi0NwLp/cp3eGi5T/iioFD4oRJk0IqpKvjemklheVuRGNHb5W4eTx74ThXkCPHfh8UY2z5WLDv4oQ4Cp8hFjPEolLwOOVk0yGuGMja9e8EBcGTYp6PjpSqKJz4QLQqBU97365bqr1lHFnxFFvw6mz24a5NpqsrZPP5k2z6jBkkyDj2RF4fru9Q4t/hUyjxA6crJavwPrZv/1Zu0sPxzbWrg9UxxMIeBJk2WMqmMOILTlVKZkFv07OvcMSjfH25qx3lq5aO5i/b/ZhcVyHSShmQfzfbtvtdbsLDcc++etivTCExClmGn79U5rCBuh6/iKRSNmxezU24GXE+eW/TRjZhYvsyt7DUp7244vnmU/o+dTu+0d1KyStLZfUfWxuuDjY2sHnzX9KEKB0zgg0seJjrMwzbXHELxSl0t1JwFz/zxTK2adsvtIsOugC44Tt2vJFt2vIum/vSXDaqbKR2xTQ7vx/XT1dMU+Va6mriwInVF07y/tGPgFDJ2kTdfqQe6XUg+Ur/wb0eoW4mFmK5ozejV5WXUfcSE7HY0YfhpWh/qLQrcIuI0ubxS1nUJYEYD1/Xoe1K6oqAjvZKuemiXMePYqcuCBiBXxwGooT/O3rn2Ob1SVOoaQEzaB/yryrVkDDbV1Mt0yd/hl8pS00KWAEkLi8KQ9gV/IA1GB57UTMCdoAXn6FansbrnZzk2mEb7sATdtMXBfTA6514oxCSG/aLzUJ4GdiAB4UJdTYVC+AlNrw3pX2FuCq/Sp9yhF8tXgXD3FR8uRTX7zMEBAQEBAQEBAQEBAQEBARMkZT0f+eJEw0LyFJmAAAAAElFTkSuQmCC" InformativeScreenshot="ad28d58ee0386eca5b593d377cbed602.png" Selector="&lt;html app='chrome.exe' title='*Cadastro*' /&gt;" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="756,114" sap2010:WorkflowViewState.IdRef="Sequence_22">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Delay DisplayName=" Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="756,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;[SupleeCadastroProduto] Ended&quot;]" />
+  </Sequence>
+</Activity>

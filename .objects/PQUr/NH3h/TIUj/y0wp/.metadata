@@ -1,0 +1,13 @@
+﻿{
+  "Id": "y0wpGSIWqEWyOOcNmHpBlw",
+  "Reference": "ZP3KN3wgLUe4q5FphCmWWw/y0wpGSIWqEWyOOcNmHpBlw",
+  "ParentRef": "ZP3KN3wgLUe4q5FphCmWWw/TIUjPR7K5UqKoq1S6T0SpA",
+  "Name": "Efeito: Fortificação Muscular",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2022-06-21T17:13:35.3404449Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-06-21T17:13:35.3404449Z"
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Id": "ZXv_pFxBv0mYachoabHy2g",
+  "Reference": "ZP3KN3wgLUe4q5FphCmWWw/ZXv_pFxBv0mYachoabHy2g",
+  "ParentRef": "ZP3KN3wgLUe4q5FphCmWWw/TIUjPR7K5UqKoq1S6T0SpA",
+  "Name": "Categoria",
+  "Type": "Element",
+  "TaxonomyType": "Dropdown",
+  "Created": "2022-06-21T17:13:34.4743787Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-06-21T17:13:34.4743787Z"
+}

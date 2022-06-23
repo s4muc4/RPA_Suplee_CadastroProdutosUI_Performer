@@ -1,0 +1,149 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Suplee_Login" this:Suplee_Login.in_UrlSuplee="https://suplee.vercel.app/cadastro-produto" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_UrlSuplee" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1794,571</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Suplee_Login_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Suplee_Login" sap:VirtualizedContainerService.HintSize="476,453" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Suplee - Cadastro dos produtos" sap:VirtualizedContainerService.HintSize="434,361" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="797b9017-0b95-455f-8b68-c8199d144a8b" Version="V1" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="242,145" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Manual'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="797b9017-0b95-455f-8b68-c8199d144a8b" Version="V1">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Manual'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/cadastro-produto" ContentHash="wrQfUMuiGUyl-7AbaStnXw" DesignTimeRectangle="1027, 1095, 86, 35" ElementType="Text" FriendlyName="'Manual'" FullSelectorArgument="&lt;webctrl aaname=' Manual ' tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Manual ' tag='H3' type='' class='font-bold xl:text-lg 2xl:text-xl text-primary-olivia-dark group-hover:text-complement-background-white transition-colors' check:innerText='Manual' /&gt;" Guid="0c0a5177-bcd3-4f2a-be51-c67aa8388934" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFoAAAAnCAYAAACPFF8dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASLSURBVGhD7ZhBayJJFMf3G8yn8BQ8CHMIDHgJgwc9CQsJuUwgCIIHQUgOC5KBhYaAYZAZCIMQsghCmBFBNrAGBgzCYAKbDENAQRiJB9fAkgbB63+r2rb7Vdmaia11WOrwh9jvvUrVr6pevapfRqMRtFYvDVqRNGhF0qAVSYNWJA1akTRoRdKgFUmDViQNWpE0aEXSoBVJAn0JI/wCa5LipRbxEdXMB6b81zJF9Dx8/+/qVbYIBwNNYvsp0Gu7BdwJfhNd4f2vHv4aNNMioMNbKN1TP1vtAuJe/ho000KgXyDzV5/4jSU2TKRBMz0LdBqZrP33YQ2m4NtH+TfbthsVV7YX6IdvKOeTiG8HXb/IS8TTaXxsdEVfS7Qv9o66r+Hj2zjCkfH39e0kjPNvGAzl2C5KmUksk0d/5kFxfBofkElHnf/Htb4dRSr/CTcPHv6LgzZQ+mwHR1ggHdBDFRnbL1H9JMbJA/tRRIJ01kux/KU0kSJo4ySNGPGnmo71C/qRHfIbxO6hyA5KP2iMT9DN70d4bf39Cu9vXV+zvm/7RHHaluKEgbVwmpjYAsic26t32EddGIx8Dsh9mac4Tjs01h9os5FFaGJLHKFpr16zLS6YEJvgSQyXP9BmDQf279cnV46vU9ZZK30OaGeimBIFdCbfudhKf0PijGtim+pLAJvHNfT4rpqaJL6raPrxA7qPPyfpkv3Pg8ajEFd/N7ExSe0uDtpqqIvynv3bKfNIWZetYuAZR9udoXu2QkhcokJhSW3Kk0RS13TscnK0l5p50q4U5xP0CHelqP3N3t6krBsP8Ao5moPngTb76LFUUz7bR4oejE5bE1+xL6Fjdzd52VcJ2vynhZsvReTIQewV5xv06NpwchYv89wGWd7+zuOeGNiwi2bFmAIrax5o0faU3T/oQbsqVDjeWjZouk0PCzh1BpFF3apE5gzs30vkdug1PYBwMo1cpYa728JPpw6VoDvVJNYdG1NsAyk27vJtFxc0Ry8NtJV/+XfS8UjAPZG97FxkYJ2zuPudl0S0OpBy9LzD8Hmg6YHG5AG6eUwnn0Dhhz9Zxbx0pHW6kKOldhcHTcqXm5NXpJGx3MemWaCl7+/Ecmh1oCUgU281tOTkIlBYmnS/szNJqpVXDnr0NUsa4Qog9/ck7hEXh8Q2C7R0uxycJ10b00GdllL+QIsLI4DE5xZMvjJNvv2j7q60NAs0vyO4bY6G0iOaNIHLAS2VU2vhfVyYbuysmRYHvAHj6/jNZHB9hE3poBFh+QMtXDqeFIEijTO0V0THmqAWyr/Lt0UR5nJA8+22S2zStpm5pdhhaGwTm6Ag1mPub/Gm5Q/0aNhCac/jrdxSEKnjLLksiVA6lZ2ZkxSKBYlNvM0uDFp+8KcHCL0lWrY5uYs/KJUOtxCzoYbi/GGmiCbrpHuVZ4qwKsbZJT5Bc/Eb5B9pbMbtfrPq4c3bD7hos10lnA8iFK5e4wipnZc21CBi/PHrS4sdjOKC2zxzGT0DtNaqpEErkgatSBq0ImnQiqRBK5IGrUgatCJp0Eo0wn+uCNaSCKmGbAAAAABJRU5ErkJggg==" InformativeScreenshot="9c39f6fd622c6925d445499d577d2b92.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/pb35jiV_lkWCOSG2JXt8UA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Suplee - Cadastro dos produtos' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="926, 1074, 289, 78" ElementType="Button" FriendlyName="'Manual'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='' class='flex items-center justify-center py-2 px-16 xl:py-3 xl:px-16 2xl:py-4 2xl:px-20 border border-primary-olivia-dark rounded-md shadow-md hover:bg-primary-olivia-dark group transition-colors max-w-[12rem] xl:max-w-[14rem] 2xl:max-w-[16rem]' aaname=' Manual ' check:innerText='Manual' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://suplee.vercel.app/cadastro-produto" ContentHash="wrQfUMuiGUyl-7AbaStnXw" DesignTimeRectangle="1027, 1095, 86, 35" ElementType="Text" FriendlyName="'Manual'" FullSelectorArgument="&lt;webctrl aaname=' Manual ' tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Manual ' tag='H3' type='' class='font-bold xl:text-lg 2xl:text-xl text-primary-olivia-dark group-hover:text-complement-background-white transition-colors' check:innerText='Manual' /&gt;" Guid="0c0a5177-bcd3-4f2a-be51-c67aa8388934" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFoAAAAnCAYAAACPFF8dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASLSURBVGhD7ZhBayJJFMf3G8yn8BQ8CHMIDHgJgwc9CQsJuUwgCIIHQUgOC5KBhYaAYZAZCIMQsghCmBFBNrAGBgzCYAKbDENAQRiJB9fAkgbB63+r2rb7Vdmaia11WOrwh9jvvUrVr6pevapfRqMRtFYvDVqRNGhF0qAVSYNWJA1akTRoRdKgFUmDViQNWpE0aEXSoBVJAn0JI/wCa5LipRbxEdXMB6b81zJF9Dx8/+/qVbYIBwNNYvsp0Gu7BdwJfhNd4f2vHv4aNNMioMNbKN1TP1vtAuJe/ho000KgXyDzV5/4jSU2TKRBMz0LdBqZrP33YQ2m4NtH+TfbthsVV7YX6IdvKOeTiG8HXb/IS8TTaXxsdEVfS7Qv9o66r+Hj2zjCkfH39e0kjPNvGAzl2C5KmUksk0d/5kFxfBofkElHnf/Htb4dRSr/CTcPHv6LgzZQ+mwHR1ggHdBDFRnbL1H9JMbJA/tRRIJ01kux/KU0kSJo4ySNGPGnmo71C/qRHfIbxO6hyA5KP2iMT9DN70d4bf39Cu9vXV+zvm/7RHHaluKEgbVwmpjYAsic26t32EddGIx8Dsh9mac4Tjs01h9os5FFaGJLHKFpr16zLS6YEJvgSQyXP9BmDQf279cnV46vU9ZZK30OaGeimBIFdCbfudhKf0PijGtim+pLAJvHNfT4rpqaJL6raPrxA7qPPyfpkv3Pg8ajEFd/N7ExSe0uDtpqqIvynv3bKfNIWZetYuAZR9udoXu2QkhcokJhSW3Kk0RS13TscnK0l5p50q4U5xP0CHelqP3N3t6krBsP8Ao5moPngTb76LFUUz7bR4oejE5bE1+xL6Fjdzd52VcJ2vynhZsvReTIQewV5xv06NpwchYv89wGWd7+zuOeGNiwi2bFmAIrax5o0faU3T/oQbsqVDjeWjZouk0PCzh1BpFF3apE5gzs30vkdug1PYBwMo1cpYa728JPpw6VoDvVJNYdG1NsAyk27vJtFxc0Ry8NtJV/+XfS8UjAPZG97FxkYJ2zuPudl0S0OpBy9LzD8Hmg6YHG5AG6eUwnn0Dhhz9Zxbx0pHW6kKOldhcHTcqXm5NXpJGx3MemWaCl7+/Ecmh1oCUgU281tOTkIlBYmnS/szNJqpVXDnr0NUsa4Qog9/ck7hEXh8Q2C7R0uxycJ10b00GdllL+QIsLI4DE5xZMvjJNvv2j7q60NAs0vyO4bY6G0iOaNIHLAS2VU2vhfVyYbuysmRYHvAHj6/jNZHB9hE3poBFh+QMtXDqeFIEijTO0V0THmqAWyr/Lt0UR5nJA8+22S2zStpm5pdhhaGwTm6Ag1mPub/Gm5Q/0aNhCac/jrdxSEKnjLLksiVA6lZ2ZkxSKBYlNvM0uDFp+8KcHCL0lWrY5uYs/KJUOtxCzoYbi/GGmiCbrpHuVZ4qwKsbZJT5Bc/Eb5B9pbMbtfrPq4c3bD7hos10lnA8iFK5e4wipnZc21CBi/PHrS4sdjOKC2zxzGT0DtNaqpEErkgatSBq0ImnQiqRBK5IGrUgatCJp0Eo0wn+uCNaSCKmGbAAAAABJRU5ErkJggg==" InformativeScreenshot="9c39f6fd622c6925d445499d577d2b92.png" Reference="ZP3KN3wgLUe4q5FphCmWWw/pb35jiV_lkWCOSG2JXt8UA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Suplee - Cadastro dos produtos' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="926, 1074, 289, 78" ElementType="Button" FriendlyName="'Manual'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='' class='flex items-center justify-center py-2 px-16 xl:py-3 xl:px-16 2xl:py-4 2xl:px-20 border border-primary-olivia-dark rounded-md shadow-md hover:bg-primary-olivia-dark group transition-colors max-w-[12rem] xl:max-w-[14rem] 2xl:max-w-[16rem]' aaname=' Manual ' check:innerText='Manual' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="ad28d58ee0386eca5b593d377cbed602.png" Selector="&lt;html app='chrome.exe' title='Suplee - Cadastro dos produtos' /&gt;" Url="[in_UrlSuplee]" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

@@ -1,0 +1,13 @@
+﻿{
+  "Id": "SVCRzW7vG0WJ-GrksSxeGA",
+  "Reference": "ZP3KN3wgLUe4q5FphCmWWw/SVCRzW7vG0WJ-GrksSxeGA",
+  "ParentRef": "ZP3KN3wgLUe4q5FphCmWWw/TIUjPR7K5UqKoq1S6T0SpA",
+  "Name": "Abrir",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Created": "2022-06-21T17:13:32.5723321Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.4.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-06-21T17:13:32.5723321Z"
+}
